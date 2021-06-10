@@ -49,7 +49,8 @@ require('lualine').setup{
 		theme = 'onedark',
 		section_separators = "",
 		component_separators = ""
-	}
+	},
+  extenstions = {'nvim-tree'}
 }
 
 -- File explorer settings
@@ -67,7 +68,7 @@ keys("n", "<F9>", [[<CMD>e ~/agenda.md<CR>]], opts)
 keys("n", "<leader>t", [[<CMD>10sp<CR><CMD>term<CR>]], opts)
 keys("t", "<ESC>", [[<C-\><C-N>]], opts)
 keys("i", "<C-SPACE>", [[<C-X><C-O>]], opts)
-keys("n", "<C-n>", [[<CMD>Lexplore<CR>]], opts)
+keys("n", "<C-n>", [[<CMD>NvimTreeToggle<CR>]], opts)
 keys("n", "gt", [[<CMD>tabnext<CR>]], opts)
 keys("n", "gT", [[<CMD>tabprevious<CR>]], opts)
 
@@ -113,6 +114,7 @@ require 'paq-nvim' {
   {'lukas-reineke/indent-blankline.nvim', branch='lua'};
   'windwp/nvim-autopairs';
   'kyazdani42/nvim-web-devicons';
+  'kyazdani42/nvim-tree.lua';
   'folke/lua-dev.nvim';
   {'nvim-treesitter/nvim-treesitter', run='TSUpdate'};
 }
@@ -294,3 +296,6 @@ require 'nvim-treesitter.configs'.setup {
     },
   }
 };
+
+-- NvimTree setup
+vim.g.nvim_tree_auto_close = 1
