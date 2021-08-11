@@ -41,12 +41,32 @@ Opt("o", "termguicolors", true)
 Opt("o", "completeopt", "menuone,noselect,preview")
 Opt("o", "ignorecase", true)
 
+-- Plugins
+require 'paq-nvim' {
+	'savq/paq-nvim';
+
+	'norcalli/nvim-base16.lua';
+	'neovim/nvim-lspconfig';
+	'hoob3rt/lualine.nvim';
+  'hrsh7th/nvim-compe';
+  'lukas-reineke/indent-blankline.nvim';
+  'windwp/nvim-autopairs';
+  'kyazdani42/nvim-web-devicons';
+  'kyazdani42/nvim-tree.lua';
+  'folke/lua-dev.nvim';
+  {'nvim-treesitter/nvim-treesitter', run='TSUpdate'};
+  'nvim-telescope/telescope.nvim';
+  'nvim-lua/popup.nvim';
+  'nvim-lua/plenary.nvim';
+  --'simrat39/rust-tools.nvim';
+}
+
 -- Setting the colorscheme and statusline
 local base16 = require 'base16'
-base16(base16.themes.onedark, true)
+base16(base16.themes.nord, true)
 require('lualine').setup{
 	options = {
-		theme = 'onedark',
+		theme = 'nord',
 		section_separators = "",
 		component_separators = ""
 	},
@@ -54,17 +74,18 @@ require('lualine').setup{
 }
 
 -- File explorer settings
-vim.g.netrw_winsize = 20
-vim.g.netrw_menu = 0
-vim.g.netrw_banner = 0
+--vim.g.netrw_winsize = 20
+--vim.g.netrw_menu = 0
+--vim.g.netrw_banner = 0
 
 -- Keybinds
 vim.g.mapleader = " "
 local opts = { noremap = true, silent = true }
 keys("i", "jk", "<ESC>", opts)
-keys("n", "<F6>", [[<CMD>e ~/Appdata/Local/nvim/init.lua<CR>]], opts)
-keys("n", "<F7>", [[<CMD>luafile ~/Appdata/Local/nvim/init.lua<CR>]], opts)
-keys("n", "<F9>", [[<CMD>e ~/agenda.md<CR>]], opts)
+keys("n", "<f5>", [[<CMD>! debug/test<CR>]], {noremap = true})
+keys("n", "<leader>m", [[<CMD>make<CR>]], opts)
+keys("n", "<F6>", [[<CMD>e $MYVIMRC<CR>]], opts)
+keys("n", "<F7>", [[<CMD>luafile $MYVIMRC<CR>]], opts)
 keys("n", "<leader>t", [[<CMD>10sp<CR><CMD>term<CR>]], opts)
 keys("t", "<ESC>", [[<C-\><C-N>]], opts)
 keys("i", "<C-SPACE>", [[<C-X><C-O>]], opts)
@@ -79,46 +100,6 @@ vim.api.nvim_command([[autocmd BufWinEnter agenda.md silent! loadview]])
 vim.api.nvim_command([[autocmd BufWinEnter agenda.md setlocal nonu]])
 vim.api.nvim_command([[autocmd BufWinEnter agenda.md setlocal signcolumn=no]])
 vim.api.nvim_command([[autocmd BufWinLeave agenda.md mkview]])
-
--- My Custom AgendaView function
-function AgendaView()
-	local buf = vim.api.nvim_create_buf(false, false)
-	local ui = vim.api.nvim_list_uis()[1]
-	local width = math.floor(ui.width * .7)
-	local height = math.floor(ui.height * .7)
-	local options = {
-		relative = 'editor',
-		width = width,
-		height = height,
-		col = (ui.width / 2) - (width / 2),
-		row = ((ui.height / 2) - 2) - (height / 2),
-		anchor = 'NW',
-		border = 'shadow',
-		style = 'minimal'
-	}
-	vim.api.nvim_open_win(buf, true, options)
-	vim.api.nvim_set_current_buf(buf)
-	vim.api.nvim_command("e ~/agenda.md")
-end
-keys("n", "<F8>", [[<CMD>lua AgendaView()<CR>]], opts)
-
-
--- Plugins
-require 'paq-nvim' {
-	'savq/paq-nvim';
-
-	'norcalli/nvim-base16.lua';
-	'neovim/nvim-lspconfig';
-	'hoob3rt/lualine.nvim';
-  'hrsh7th/nvim-compe';
-  {'lukas-reineke/indent-blankline.nvim', branch='lua'};
-  'windwp/nvim-autopairs';
-  'kyazdani42/nvim-web-devicons';
-  'kyazdani42/nvim-tree.lua';
-  'folke/lua-dev.nvim';
-  {'nvim-treesitter/nvim-treesitter', run='TSUpdate'};
-}
-
 
 -- Neovide Configuration
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
@@ -157,15 +138,18 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "pyright", "rust_analyzer" }
+local servers = { "pyright", "rust_analyzer", "ccls" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
 
+-- My Rust-tools setup
+--require('rust-tools').setup()
+
 -- My luadev setup
 -- set the path to the sumneko installation
-local system_name = "Windows" -- (Linux, macOS, or Windows)
-local sumneko_root_path = '/Tools/lua-language-server'
+local system_name = "Linux" -- (Linux, macOS, or Windows)
+local sumneko_root_path = '/home/bailey/.config/lua-language-server'
 local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
 
 local luadev = require('lua-dev').setup({
@@ -201,8 +185,8 @@ local lspconfig = require('lspconfig')
 lspconfig.sumneko_lua.setup(luadev)
 
 -- Custom Highlights
-vim.highlight.create('LineNr', {guibg='#282c34'}, false)
-vim.highlight.create('SignColumn', {guibg='#282c34'}, false)
+vim.highlight.create('LineNr', {guibg='#2E3440'}, false)
+vim.highlight.create('SignColumn', {guibg='#2E3440'}, false)
 
 
 -- Compe Setup
@@ -259,10 +243,10 @@ _G.s_tab_complete = function()
   end
 end
 
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+--vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+--vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+--vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+--vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
 function _G.completions()
     local npairs = require("nvim-autopairs")
@@ -285,7 +269,7 @@ require('nvim-autopairs').setup()
 -- IndentLine setup
 vim.g.indent_blankline_filetype_exclude = {"help", "terminal"}
 vim.g.indent_blankline_buftype_exclude = {"terminal"}
-vim.g.indent_blankline_char = "⋮"
+vim.g.indent_blankline_char = "┊"
 
 -- TreeSitter setup
 require 'nvim-treesitter.configs'.setup {
@@ -298,4 +282,61 @@ require 'nvim-treesitter.configs'.setup {
 };
 
 -- NvimTree setup
-vim.g.nvim_tree_auto_close = 1
+--vim.g.nvim_tree_auto_close = 1
+
+-- Telescope Setup
+local telescope_actions = require('telescope.actions')
+require('telescope').setup{
+  defaults = {
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case'
+    },
+    prompt_prefix = "> ",
+    selection_caret = "> ",
+    entry_prefix = "  ",
+    initial_mode = "insert",
+    selection_strategy = "reset",
+    sorting_strategy = "descending",
+    layout_strategy = "horizontal",
+    layout_config = {
+      horizontal = {
+        mirror = false,
+      },
+      vertical = {
+        mirror = false,
+      },
+    },
+    file_sorter =  require'telescope.sorters'.get_fuzzy_file,
+    file_ignore_patterns = {},
+    generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
+    winblend = 0,
+    border = {},
+    borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
+    color_devicons = true,
+    use_less = true,
+    path_display = {},
+    set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
+    file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
+    grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
+    qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
+
+    -- Developer configurations: Not meant for general override
+    buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
+    mappings = {
+      i = {
+        ["<C-c>"] = false,
+        ["<ESC>"] = telescope_actions.close,
+      }
+    },
+  },
+}
+vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", { silent = true})
+vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>", { silent = true})
+vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>", { silent = true})
+vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>", { silent = true})
