@@ -42,31 +42,28 @@ Opt("o", "completeopt", "menuone,noselect,preview")
 Opt("o", "ignorecase", true)
 
 -- Plugins
-require 'paq-nvim' {
-	'savq/paq-nvim';
-
-	'norcalli/nvim-base16.lua';
-	'neovim/nvim-lspconfig';
-	'hoob3rt/lualine.nvim';
-  --'hrsh7th/nvim-compe';
-  'hrsh7th/cmp-nvim-lsp';
-  'hrsh7th/cmp-buffer';
-  'hrsh7th/cmp-path';
-  'hrsh7th/cmp-cmdline';
-  'hrsh7th/nvim-cmp';
-  'hrsh7th/cmp-vsnip';
-  'hrsh7th/vim-vsnip';
-  'lukas-reineke/indent-blankline.nvim';
-  'windwp/nvim-autopairs';
-  'kyazdani42/nvim-web-devicons';
-  'kyazdani42/nvim-tree.lua';
-  'folke/lua-dev.nvim';
-  {'nvim-treesitter/nvim-treesitter', run='TSUpdate'};
-  'nvim-telescope/telescope.nvim';
-  'nvim-lua/popup.nvim';
-  'nvim-lua/plenary.nvim';
-  --'simrat39/rust-tools.nvim';
-}
+require('packer').startup(function()
+  use 'wbthomason/packer.nvim'
+  use 'norcalli/nvim-base16.lua'
+  use 'neovim/nvim-lspconfig'
+  use 'hoob3rt/lualine.nvim'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
+  use 'lukas-reineke/indent-blankline.nvim'
+  use 'windwp/nvim-autopairs'
+  use 'kyazdani42/nvim-web-devicons'
+  use 'kyazdani42/nvim-tree.lua'
+  use 'folke/lua-dev.nvim'
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'nvim-telescope/telescope.nvim'
+  use 'nvim-lua/popup.nvim'
+  use 'nvim-lua/plenary.nvim'
+end)
 
 -- Setting the colorscheme and statusline
 local base16 = require 'base16'
@@ -79,11 +76,6 @@ require('lualine').setup{
 	},
   extenstions = {'nvim-tree'}
 }
-
--- File explorer settings
---vim.g.netrw_winsize = 20
---vim.g.netrw_menu = 0
---vim.g.netrw_banner = 0
 
 -- Keybinds
 vim.g.mapleader = " "
@@ -110,7 +102,7 @@ vim.api.nvim_command([[autocmd BufWinLeave agenda.md mkview]])
 
 -- Neovide Configuration
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
-Opt("o", "guifont", "NotoMono NF,all-the-icons")
+--Opt("o", "guifont", "NotoMono NF,all-the-icons")
 
 -- CMP setup
 local cmp = require'cmp'
@@ -164,80 +156,6 @@ keys("i", "<Tab>", [[vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<Tab>']], 
 keys("i", "<S-Tab>", [[vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>']], {expr = true})
 keys("s", "<Tab>", [[vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<Tab>']], {expr = true})
 keys("s", "<S-Tab>", [[vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>']], {expr = true})
----- ### START OF COMPE
----- -- Compe Setup
----- require'compe'.setup {
-----   enabled = true;
-----   autocomplete = true;
-----   debug = false;
-----   min_length = 1;
-----   preselect = 'enable';
-----   throttle_time = 80;
-----   source_timeout = 200;
-----   incomplete_delay = 400;
-----   max_abbr_width = 100;
-----   max_kind_width = 100;
-----   max_menu_width = 100;
-----   documentation = true;
----- 
-----   source = {
-----     path = true;
-----     nvim_lsp = true;
-----   };
----- }
----- 
----- local t = function(str)
-----   return vim.api.nvim_replace_termcodes(str, true, true, true)
----- end
----- 
----- local check_back_space = function()
-----     local col = vim.fn.col('.') - 1
-----     if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-----         return true
-----     else
-----         return false
-----     end
----- end
----- 
----- -- Use (s-)tab to:
----- --- move to prev/next item in completion menuone
----- --- jump to prev/next snippet's placeholder
----- _G.tab_complete = function()
-----   if vim.fn.pumvisible() == 1 then
-----     return t "<C-n>"
-----   elseif check_back_space() then
-----     return t "<Tab>"
-----   else
-----     return vim.fn['compe#complete']()
-----   end
----- end
----- _G.s_tab_complete = function()
-----   if vim.fn.pumvisible() == 1 then
-----     return t "<C-p>"
-----   else
-----     return t "<S-Tab>"
-----   end
----- end
----- 
----- --vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
----- --vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
----- --vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
----- --vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
----- 
----- function _G.completions()
-----     local npairs = require("nvim-autopairs")
-----     if vim.fn.pumvisible() == 1 then
-----         if vim.fn.complete_info()["selected"] ~= -1 then
-----             return vim.fn["compe#confirm"]("<CR>")
-----         end
-----     end
-----     return npairs.check_break_line_char()
----- end
----- 
----- vim.api.nvim_set_keymap("i", "<CR>", "v:lua.completions()", {expr = true})
-----
----- #### END OF COMPE
-
 
 -- Lsp Config
 local nvim_lsp = require('lspconfig')
@@ -245,9 +163,6 @@ local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-  --Enable completion triggered by <c-x><c-o>
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -262,7 +177,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+  buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
   buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
@@ -270,18 +185,32 @@ local on_attach = function(client, bufnr)
 
 end
 
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
 -- Capabilities for nvim-cmp
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "pyright", "rust_analyzer", "ccls", "gopls" }
+local servers = { "pyright", "rust_analyzer", "cmake", "gopls" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach, capabilities = capabilities }
 end
 
 -- My Rust-tools setup
 --require('rust-tools').setup()
+
+-- My ccls setup
+nvim_lsp.ccls.setup {
+  init_options = {
+    compilationDatabaseDirectory = "build";
+  },
+  on_attach = on_attach
+}
 
 -- My luadev setup
 -- set the path to the sumneko installation
@@ -318,12 +247,12 @@ local luadev = require('lua-dev').setup({
     on_attach = on_attach
   }
 })
-local lspconfig = require('lspconfig')
-lspconfig.sumneko_lua.setup(luadev)
+--local lspconfig = require('lspconfig')
+nvim_lsp.sumneko_lua.setup(luadev)
 
 -- Custom Highlights
-vim.highlight.create('LineNr', {guibg='#2E3440'}, false)
-vim.highlight.create('SignColumn', {guibg='#2E3440'}, false)
+--vim.highlight.create('LineNr', {guibg='#2E3440'}, false)
+--vim.highlight.create('SignColumn', {guibg='#2E3440'}, false)
 
 
 -- Devicons setup
