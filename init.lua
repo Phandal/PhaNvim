@@ -60,17 +60,18 @@ require('packer').startup(function()
   use 'kyazdani42/nvim-tree.lua'
   use 'folke/lua-dev.nvim'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'nvim-telescope/telescope.nvim'
+  --use 'nvim-telescope/telescope.nvim'
+  use 'ibhagwan/fzf-lua'
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
 end)
 
 -- Setting the colorscheme and statusline
 local base16 = require 'base16'
-base16(base16.themes.nord, true)
+base16(base16.themes.onedark, true)
 require('lualine').setup{
 	options = {
-		theme = 'nord',
+		theme = 'onedark',
 		section_separators = "",
 		component_separators = ""
 	},
@@ -280,58 +281,66 @@ require 'nvim-treesitter.configs'.setup {
 require 'nvim-tree'.setup()
 
 -- Telescope Setup
-local telescope_actions = require('telescope.actions')
-require('telescope').setup{
-  defaults = {
-    vimgrep_arguments = {
-      'rg',
-      '--color=never',
-      '--no-heading',
-      '--with-filename',
-      '--line-number',
-      '--column',
-      '--smart-case'
-    },
-    prompt_prefix = "> ",
-    selection_caret = "> ",
-    entry_prefix = "  ",
-    initial_mode = "insert",
-    selection_strategy = "reset",
-    sorting_strategy = "descending",
-    layout_strategy = "horizontal",
-    layout_config = {
-      horizontal = {
-        mirror = false,
-      },
-      vertical = {
-        mirror = false,
-      },
-    },
-    file_sorter =  require'telescope.sorters'.get_fuzzy_file,
-    file_ignore_patterns = {},
-    generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
-    winblend = 0,
-    border = {},
-    borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
-    color_devicons = true,
-    use_less = true,
-    path_display = {},
-    set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
-    file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
-    grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
-    qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
+--local telescope_actions = require('telescope.actions')
+--require('telescope').setup{
+--  defaults = {
+--    vimgrep_arguments = {
+--      'rg',
+--      '--color=never',
+--      '--no-heading',
+--      '--with-filename',
+--      '--line-number',
+--      '--column',
+--      '--smart-case'
+--    },
+--    prompt_prefix = "> ",
+--    selection_caret = "> ",
+--    entry_prefix = "  ",
+--    initial_mode = "insert",
+--    selection_strategy = "reset",
+--    sorting_strategy = "descending",
+--    layout_strategy = "horizontal",
+--    layout_config = {
+--      horizontal = {
+--        mirror = false,
+--      },
+--      vertical = {
+--        mirror = false,
+--      },
+--    },
+--    file_sorter =  require'telescope.sorters'.get_fuzzy_file,
+--    file_ignore_patterns = {},
+--    generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
+--    winblend = 0,
+--    border = {},
+--    borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
+--    color_devicons = true,
+--    use_less = true,
+--    path_display = {},
+--    set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
+--    file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
+--    grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
+--    qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
+--
+--    -- Developer configurations: Not meant for general override
+--    buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
+--    mappings = {
+--      i = {
+--        ["<C-c>"] = false,
+--        ["<ESC>"] = telescope_actions.close,
+--      }
+--    },
+--  },
+--}
+--vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", { silent = true})
+--vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>", { silent = true})
+--vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>", { silent = true})
+--vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>", { silent = true})
 
-    -- Developer configurations: Not meant for general override
-    buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
-    mappings = {
-      i = {
-        ["<C-c>"] = false,
-        ["<ESC>"] = telescope_actions.close,
-      }
-    },
-  },
-}
-vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", { silent = true})
-vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>", { silent = true})
-vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>", { silent = true})
-vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>", { silent = true})
+-- Fzf-lua Setup
+require('fzf-lua').setup{}
+
+vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua require('fzf-lua').live_grep()<CR>", { silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>lua require('fzf-lua').buffers()<CR>", { silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua require('fzf-lua').help_tags()<CR>", { silent = true, noremap = true})
