@@ -337,10 +337,15 @@ require 'nvim-tree'.setup()
 --vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>", { silent = true})
 --vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>", { silent = true})
 
--- Fzf-lua Setup
-require('fzf-lua').setup{}
+require('fzf-lua').setup{
+  winopts = {
+    preview = {
+      hidden = 'hidden'
+    }
+  }
+}
 
 vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>", {silent = true, noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua require('fzf-lua').live_grep()<CR>", { silent = true, noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>lua require('fzf-lua').buffers()<CR>", { silent = true, noremap = true})
-vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua require('fzf-lua').help_tags()<CR>", { silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua require('fzf-lua').live_grep()<CR>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>lua require('fzf-lua').buffers()<CR>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua require('fzf-lua').help_tags()<CR>", {silent = true, noremap = true})
