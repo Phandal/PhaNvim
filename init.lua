@@ -17,53 +17,53 @@ function Opt(scope, option, value)
 end
 
 -- Setting options
-Opt("w", "number", true)
-Opt("b", "syntax", "on")
-Opt("b", "tabstop", 2)
-Opt("b", "softtabstop", 2)
-Opt("b", "shiftwidth", 2)
-Opt("b", "expandtab", true)
-Opt("o", "showmode", false)
-Opt("o", "mouse", "a")
-Opt("o", "clipboard", "unnamedplus")
-Opt("w", "wrap", false)
-Opt("o", "splitright", true)
-Opt("o", "splitbelow", true)
-Opt("w", "foldmethod", "marker")
-Opt("o", "hidden", true)
-Opt("o", "backup", false)
-Opt("o", "writebackup", false)
-Opt("o", "cmdheight", 2)
-Opt("o", "updatetime", 300)
-Opt("o", "shortmess", "filnxtToOFc")
-Opt("w", "signcolumn", "yes")
-Opt("o", "termguicolors", true)
-Opt("o", "completeopt", "menuone,noselect,preview")
-Opt("o", "ignorecase", true)
+Opt("w", "number", true)                                -- Adds number lines
+Opt("b", "syntax", "on")                                -- Turns on syntax highlighting
+Opt("b", "tabstop", 2)                                  -- Sets width of tabs
+Opt("b", "softtabstop", 2)                              -- Also changes tab width
+Opt("b", "shiftwidth", 2)                               -- Sets the how much lines are shifted over
+Opt("b", "expandtab", true)                             -- Turns tabs into spaces
+Opt("o", "showmode", false)                             -- Turns off mode in the command bar
+Opt("o", "mouse", "a")                                  -- Turns on the mouse
+Opt("o", "clipboard", "unnamedplus")                    -- Sets the clipboard to the same one as the system
+Opt("w", "wrap", false)                                 -- Turns off word wrapping
+Opt("o", "splitright", true)                            -- Split to the right
+Opt("o", "splitbelow", true)                            -- Split to the bottom
+Opt("w", "foldmethod", "marker")                        -- Sets the fold method
+Opt("o", "hidden", true)                                -- Instead of unloading buffers just hide them
+Opt("o", "backup", false)                               -- Turn off backup files
+Opt("o", "writebackup", false)                          -- Stop writing backup
+Opt("o", "cmdheight", 2)                                -- Sets the height of the command bar
+Opt("o", "updatetime", 300)                             -- Changes the update time (Used for LSP)
+Opt("o", "shortmess", "filnxtToOFc")                    -- Change the format of messages
+Opt("w", "signcolumn", "yes")                           -- Set the sign column
+Opt("o", "termguicolors", true)                         -- Sets the colors properly
+Opt("o", "completeopt", "menuone,noselect,preview")     -- Changes the options for when completion should show up
+Opt("o", "ignorecase", true)                            -- Ignore case in search
 
 -- Plugins
 require('packer').startup(function()
-  use 'wbthomason/packer.nvim'
-  use 'norcalli/nvim-base16.lua'
-  use 'neovim/nvim-lspconfig'
-  use 'hoob3rt/lualine.nvim'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
-  use 'lukas-reineke/indent-blankline.nvim'
-  use 'windwp/nvim-autopairs'
-  use 'kyazdani42/nvim-web-devicons'
-  use 'kyazdani42/nvim-tree.lua'
-  use 'folke/lua-dev.nvim'
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  --use 'nvim-telescope/telescope.nvim'
-  use 'ibhagwan/fzf-lua'
-  use 'nvim-lua/popup.nvim'
-  use 'nvim-lua/plenary.nvim'
+  use 'wbthomason/packer.nvim'                                  -- Plugin Manager
+  use 'norcalli/nvim-base16.lua'                                -- Theme
+  use 'neovim/nvim-lspconfig'                                   -- Base set of LSP configs
+  use 'hoob3rt/lualine.nvim'                                    -- Different modeline
+  use 'hrsh7th/nvim-cmp'                                        -- Completion engine
+  use 'hrsh7th/cmp-nvim-lsp'                                    -- Completion for LSP
+  use 'hrsh7th/cmp-buffer'                                      -- Completion for Buffers
+  use 'hrsh7th/cmp-path'                                        -- Completion for Paths
+  use 'hrsh7th/cmp-cmdline'                                     -- Completion for the command line
+  use 'hrsh7th/cmp-vsnip'                                       -- Completion for vsnip
+  use 'hrsh7th/vim-vsnip'                                       -- Snippets plugin
+  use 'lukas-reineke/indent-blankline.nvim'                     -- Shows a symbol for indents
+  use 'windwp/nvim-autopairs'                                   -- Automatically adds closing bracket
+  use 'kyazdani42/nvim-web-devicons'                            -- Cool icons
+  use 'kyazdani42/nvim-tree.lua'                                -- Tree like file manager
+  use 'folke/lua-dev.nvim'                                      -- Config file for lua
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }  -- Syntax highlighting using TreeSitter
+  --use 'nvim-telescope/telescope.nvim'                         -- Fuzzy Finder
+  use 'ibhagwan/fzf-lua'                                        -- Fuzzy Finder
+  use 'nvim-lua/popup.nvim'                                     -- Dependency Plugin
+  use 'nvim-lua/plenary.nvim'                                   -- Dependency Plugin
 end)
 
 -- Setting the colorscheme and statusline
@@ -197,7 +197,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "pyright", "rust_analyzer", "cmake", "gopls" }
+local servers = { "pyright", "rust_analyzer", "cmake", "gopls", "bashls" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach, capabilities = capabilities }
 end
@@ -210,7 +210,8 @@ nvim_lsp.ccls.setup {
   init_options = {
     compilationDatabaseDirectory = "build";
   },
-  on_attach = on_attach
+  on_attach = on_attach,
+  capabilities = capabilities
 }
 
 -- My luadev setup
@@ -245,7 +246,8 @@ local luadev = require('lua-dev').setup({
         },
       }
     },
-    on_attach = on_attach
+    on_attach = on_attach,
+    capabilities = capabilities
   }
 })
 --local lspconfig = require('lspconfig')
@@ -271,71 +273,11 @@ vim.g.indent_blankline_char = "┊"
 require 'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
-    custom_captures = {
-      ["foo.bar"] = "Identifier",
-    },
   }
 };
 
 -- NvimTree setup
 require 'nvim-tree'.setup()
-
--- Telescope Setup
---local telescope_actions = require('telescope.actions')
---require('telescope').setup{
---  defaults = {
---    vimgrep_arguments = {
---      'rg',
---      '--color=never',
---      '--no-heading',
---      '--with-filename',
---      '--line-number',
---      '--column',
---      '--smart-case'
---    },
---    prompt_prefix = "> ",
---    selection_caret = "> ",
---    entry_prefix = "  ",
---    initial_mode = "insert",
---    selection_strategy = "reset",
---    sorting_strategy = "descending",
---    layout_strategy = "horizontal",
---    layout_config = {
---      horizontal = {
---        mirror = false,
---      },
---      vertical = {
---        mirror = false,
---      },
---    },
---    file_sorter =  require'telescope.sorters'.get_fuzzy_file,
---    file_ignore_patterns = {},
---    generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
---    winblend = 0,
---    border = {},
---    borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
---    color_devicons = true,
---    use_less = true,
---    path_display = {},
---    set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
---    file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
---    grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
---    qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
---
---    -- Developer configurations: Not meant for general override
---    buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
---    mappings = {
---      i = {
---        ["<C-c>"] = false,
---        ["<ESC>"] = telescope_actions.close,
---      }
---    },
---  },
---}
---vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", { silent = true})
---vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>", { silent = true})
---vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>", { silent = true})
---vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>", { silent = true})
 
 require('fzf-lua').setup{
   winopts = {
