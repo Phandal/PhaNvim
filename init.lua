@@ -68,10 +68,10 @@ end)
 
 -- Setting the colorscheme and statusline
 local base16 = require 'base16'
-base16(base16.themes.nord, true)
+base16(base16.themes.onedark, true)
 require('lualine').setup{
 	options = {
-		theme = 'nord',
+		theme = 'onedark',
 		section_separators = "",
 		component_separators = ""
 	},
