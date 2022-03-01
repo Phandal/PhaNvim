@@ -60,7 +60,6 @@ require('packer').startup(function()
   use 'kyazdani42/nvim-tree.lua'                                -- Tree like file manager
   use 'folke/lua-dev.nvim'                                      -- Config file for lua
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }  -- Syntax highlighting using TreeSitter
-  --use 'nvim-telescope/telescope.nvim'                         -- Fuzzy Finder
   use 'ibhagwan/fzf-lua'                                        -- Fuzzy Finder
   use 'nvim-lua/popup.nvim'                                     -- Dependency Plugin
   use 'nvim-lua/plenary.nvim'                                   -- Dependency Plugin
@@ -68,10 +67,10 @@ end)
 
 -- Setting the colorscheme and statusline
 local base16 = require 'base16'
-base16(base16.themes.onedark, true)
+base16(base16.themes.nord, true)
 require('lualine').setup{
 	options = {
-		theme = 'onedark',
+		theme = 'nord',
 		section_separators = "",
 		component_separators = ""
 	},
@@ -197,13 +196,20 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "pyright", "rust_analyzer", "cmake", "gopls", "bashls" }
+local servers = { "pyright", "rust_analyzer", "cmake", "gopls", "bashls", "vuels" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach, capabilities = capabilities }
 end
 
 -- My Rust-tools setup
 --require('rust-tools').setup()
+
+-- My emmet_ls setup
+nvim_lsp.emmet_ls.setup {
+  filetypes = { "html", "css", "vue"},
+  on_attach = on_attach,
+  capabilities = capabilities
+}
 
 -- My ccls setup
 nvim_lsp.ccls.setup {
@@ -279,6 +285,7 @@ require 'nvim-treesitter.configs'.setup {
 -- NvimTree setup
 require 'nvim-tree'.setup()
 
+-- FZF-lua setup
 require('fzf-lua').setup{
   winopts = {
     preview = {
