@@ -67,10 +67,10 @@ end)
 
 -- Setting the colorscheme and statusline
 local base16 = require 'base16'
-base16(base16.themes.nord, true)
+base16(base16.themes["solarized-light"], true)
 require('lualine').setup{
 	options = {
-		theme = 'nord',
+		theme = 'solarized_light',
 		section_separators = "",
 		component_separators = ""
 	},
