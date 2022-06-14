@@ -1,6 +1,7 @@
 local g = vim.g
 local opt = vim.opt
 local autocmd = vim.api.nvim_create_autocmd
+local cmd = vim.cmd
 
 -- Options
 opt.syntax = "on"
@@ -29,6 +30,10 @@ opt.background = "light"
 g.mapleader = " "
 
 -- Autocommands
-autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.number = false"})
-autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.signcolumn = 'no'"})
-autocmd("TermOpen", { pattern = "*", command = "startinsert"})
+autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.number = false"} )
+autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.signcolumn = 'no'"} )
+autocmd("TermOpen", { pattern = "*", command = "startinsert"} )
+autocmd("BufWritePre", { pattern = "*.tsx,*.ts,*.jsx,*.js", command = "EslintFixAll" })
+
+-- Highlights
+cmd([[hi StatusLine guibg=none]])
