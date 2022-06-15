@@ -25,6 +25,7 @@ opt.termguicolors = true
 opt.ignorecase = true
 opt.completeopt = "menuone,noselect,preview"
 opt.background = "light"
+opt.laststatus = 3
 
 -- Global variables
 g.mapleader = " "

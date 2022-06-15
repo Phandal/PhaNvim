@@ -3,6 +3,7 @@ require('telescope').setup{
     -- Default configuration for telescope goes here:
     -- config_key = value,
     winblend = 30,
+    layout_strategy = 'vertical',
     vimgrep_arguments = {
       "rg",
       "--color=never",
