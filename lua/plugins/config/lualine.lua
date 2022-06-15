@@ -1,4 +1,4 @@
-if vim.loop.os_uname().sysname == "Linux" then
+if vim.loop.os_uname().sysname == "Linux" and vim.loop.os_gethostname() == "ArchBox" then
   local theme = 'solarized_light'
 else
   local theme = 'onedark'
