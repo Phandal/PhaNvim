@@ -26,6 +26,7 @@ opt.ignorecase = true
 opt.completeopt = "menuone,noselect,preview"
 opt.background = "light"
 opt.laststatus = 3
+opt.fillchars = "eob: "
 
 -- Global variables
 g.mapleader = " "
@@ -37,4 +38,4 @@ autocmd("TermOpen", { pattern = "*", command = "startinsert"} )
 autocmd("BufWritePre", { pattern = "*.tsx,*.ts,*.jsx,*.js", command = "EslintFixAll" })
 
 -- Highlights
-cmd([[hi StatusLine guibg=none]])
+
