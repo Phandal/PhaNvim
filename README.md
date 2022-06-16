@@ -13,3 +13,17 @@ git clone https://github.com/Phandal/nvim-init
 ```
 
 ## Plugins
+
+| Plugin            | Usage                         |
+| ----------------- | ----------------------------- |
+| packer            | Plugin Manager                |
+| nvim-base16       | ColorScheme                   |
+| nvim-tree         | Tree-Like File Manager        |
+| nvim-web-devicons | Fancy Icons for Nvim-Tree     |
+| lualine           | StatusLine                    |
+| telescope         | Fuzzy Finder/Command Palette  |
+| plenary           | Dependency Plugin             |
+| nvim-treesitter   | Syntax Highlighting           |
+| nvim-autopairs    | Closing Bracket Support       |
+| indent-blankline  | Highlight Indents             |
+| nvim-lspconfig    | Server Configurations for LSP |
