@@ -26,7 +26,7 @@ opt.ignorecase = true
 opt.completeopt = "menuone,noselect,preview"
 opt.background = "light"
 opt.laststatus = 3
-opt.fillchars = "eob: "
+opt.fillchars = "eob: ,vert:|"
 
 -- Global variables
 g.mapleader = " "
@@ -38,4 +38,8 @@ autocmd("TermOpen", { pattern = "*", command = "startinsert"} )
 autocmd("BufWritePre", { pattern = "*.tsx,*.ts,*.jsx,*.js", command = "EslintFixAll" })
 
 -- Highlights
-
+cmd([[hi SignColumn guibg=none ctermbg=none]])
+cmd([[hi StatusLineNC guibg=none]])
+cmd([[hi StatusLine guibg=none]])
+cmd([[hi VertSplit guibg=none]])
+cmd([[hi LineNr guibg=none]])

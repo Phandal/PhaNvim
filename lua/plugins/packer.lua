@@ -25,16 +25,11 @@ require('packer').startup(function(use)
   use ('windwp/nvim-autopairs')                                   -- Automatically adds closing bracket
   use ('lukas-reineke/indent-blankline.nvim')                     -- Shows a symbol for indents
   use ('neovim/nvim-lspconfig')                                   -- Base set of LSP configs
+  use ('hrsh7th/nvim-cmp')                                        -- Completion engine
+  use ('hrsh7th/cmp-nvim-lsp')                                    -- Completion for LSP
+  use ('L3MON4D3/LuaSnip')                                        -- Snippet Plugin
+  use ('hrsh7th/cmp-nvim-lsp-signature-help')                     -- Completion Plugin to show signatures
 
-  -- use 'hrsh7th/nvim-cmp'                                        -- Completion engine
-  -- use 'hrsh7th/cmp-nvim-lsp'                                    -- Completion for LSP
-  -- use 'hrsh7th/cmp-buffer'                                      -- Completion for Buffers
-  -- use 'hrsh7th/cmp-path'                                        -- Completion for Paths
-  -- use 'hrsh7th/cmp-cmdline'                                     -- Completion for the command line
-  -- use 'hrsh7th/cmp-vsnip'                                       -- Completion for vsnip
-  -- use 'hrsh7th/vim-vsnip'                                       -- Snippets plugin
-  -- use 'nvim-lua/popup.nvim'                                     -- Dependency Plugin
-  -- use 'nvim-lua/plenary.nvim'                                   -- Dependency Plugin
   if packer_bootstrap then
     require("packer").sync()
   end

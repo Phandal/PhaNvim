@@ -6,3 +6,4 @@ require('plugins.config.treesitter')
 require('plugins.config.autopairs')
 require('plugins.config.indent-blankline');
 require('plugins.config.lsp')
+require('plugins.config.cmp')
