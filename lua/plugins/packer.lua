@@ -27,8 +27,9 @@ require('packer').startup(function(use)
   use ('neovim/nvim-lspconfig')                                   -- Base set of LSP configs
   use ('hrsh7th/nvim-cmp')                                        -- Completion engine
   use ('hrsh7th/cmp-nvim-lsp')                                    -- Completion for LSP
-  use ('L3MON4D3/LuaSnip')                                        -- Snippet Plugin
   use ('hrsh7th/cmp-nvim-lsp-signature-help')                     -- Completion Plugin to show signatures
+  use ('L3MON4D3/LuaSnip')                                        -- Snippet Plugin
+  use ('saadparwaiz1/cmp_luasnip')
 
   if packer_bootstrap then
     require("packer").sync()

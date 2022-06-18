@@ -16,3 +16,4 @@ set_key("n", "<Leader>gs", [[<CMD>lua require("telescope.builtin").git_status()<
 set_key("n", "<Leader>gi", [[<CMD>lua require("telescope.builtin").lsp_implementations()<CR>]], key_opts)
 set_key("n", "<Leader>gd", [[<CMD>lua require("telescope.builtin").lsp_definitions()<CR>]], key_opts)
 set_key("n", "<Leader>gr", [[<CMD>lua require("telescope.builtin").lsp_references()<CR>]], key_opts)
+set_key("n", "<leader>gp", [[<CMD>lua require("telescope.builtin").diagnostics()<CR>]], key_opts)
