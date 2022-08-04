@@ -1,5 +1,8 @@
 {
-	name:"NS-Snippets",
+	"name":"NS-Snippets",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
 	"contributes": {
 		"snippets": [
 			{
