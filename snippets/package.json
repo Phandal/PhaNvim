@@ -1,0 +1,13 @@
+{
+	name:"NS-Snippets",
+	"contributes": {
+		"snippets": [
+			{
+				"language": [
+					"typescript"
+				],
+				"path": "./netsuite.json"
+			}
+		]
+	}
+}

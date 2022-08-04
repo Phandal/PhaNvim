@@ -40,9 +40,9 @@ opt.fillchars = "eob: ,vert:|"
 g.mapleader = " "
 
 -- Autocommands
-autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.number = false"} )
-autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.signcolumn = 'no'"} )
-autocmd("TermOpen", { pattern = "*", command = "startinsert"} )
+autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.number = false" })
+autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.signcolumn = 'no'" })
+autocmd("TermOpen", { pattern = "*", command = "startinsert" })
 autocmd("BufWritePre", { pattern = "*.tsx,*.ts,*.jsx,*.js", command = "EslintFixAll" })
 
 -- Highlights
