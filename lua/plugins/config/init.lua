@@ -8,3 +8,4 @@ require('plugins.config.indent-blankline');
 require('plugins.config.lsp')
 require('plugins.config.cmp')
 require('plugins.config.luasnip')
+require('plugins.config.sdfcli')

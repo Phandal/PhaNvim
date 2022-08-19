@@ -30,6 +30,8 @@ require('packer').startup(function(use)
   use ('hrsh7th/cmp-nvim-lsp-signature-help')                     -- Completion Plugin to show signatures
   use ('L3MON4D3/LuaSnip')                                        -- Snippet Plugin
   use ('saadparwaiz1/cmp_luasnip')
+  use ('nanotee/luv-vimdocs')
+  use ('~/Development/sdfcli.nvim/')
 
   if packer_bootstrap then
     require("packer").sync()
