@@ -18,7 +18,7 @@ require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons' }           
       })
   use ('hoob3rt/lualine.nvim')                                    -- Different modeline
-  use ({ 'nvim-telescope/telescope.nvim',                          -- Fuzzy Finder
+  use ({ 'nvim-telescope/telescope.nvim',                         -- Fuzzy Finder
         requires = { 'nvim-lua/plenary.nvim' }
       })
   use ({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })  -- Syntax highlighting using TreeSitter
@@ -29,7 +29,12 @@ require('packer').startup(function(use)
   use ('hrsh7th/cmp-nvim-lsp')                                    -- Completion for LSP
   use ('hrsh7th/cmp-nvim-lsp-signature-help')                     -- Completion Plugin to show signatures
   use ('L3MON4D3/LuaSnip')                                        -- Snippet Plugin
-  use ('saadparwaiz1/cmp_luasnip')
+  use ('nanotee/luv-vimdocs')                                     -- libuv docs in Neovim
+  use ('saadparwaiz1/cmp_luasnip')                                -- Completion Plugin to show snippets
+  -- use ('Phandal/sdfcli.nvim')                                     -- SDF plugin
+  use ('~/Development/sdfcli.nvim/')
+
+  -- use ('ms-jpq/lua-async-await')
 
   if packer_bootstrap then
     require("packer").sync()
