@@ -9,7 +9,7 @@ Custom Neovim configuration written in Lua, focused on ease of use and portabili
 ## Installation
 To install just clone this repo to your neovim configuration location
 ```bash
-git clone https://github.com/Phandal/nvim-init /path/to/your/config/location/nvim
+git clone https://github.com/Phandal/PhaNvim /path/to/your/config/location/nvim
 ```
 
 ## Plugins
