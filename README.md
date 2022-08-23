@@ -1,6 +1,7 @@
 # PhaNvim
 
 ![Screenshot](./screenshots/main.png)
+![Screenshot](./screenshots/telescope.png.png)
 Custom Neovim configuration written in Lua, focused on ease of use and portability between all of my systems.
 
 1. [Installation](#installation)
