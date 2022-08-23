@@ -34,7 +34,7 @@ require('telescope').setup{
     -- builtin picker
     find_files = {
       no_ignore = true,
-      hidden = true,
+      hidden = false,
     }
   },
   extensions = {
