@@ -1,7 +1,8 @@
+local theme
 if vim.loop.os_uname().sysname == "Linux" and vim.loop.os_gethostname() == "ArchBox" then
-  local theme = 'solarized_light'
+  theme = 'solarized_light'
 else
-  local theme = 'onedark'
+  theme = 'onelight'
 end
 
 require('lualine').setup {
