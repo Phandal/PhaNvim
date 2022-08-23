@@ -52,5 +52,5 @@ cmd([[hi StatusLine guibg=none]])
 cmd([[hi VertSplit guibg=none]])
 cmd([[hi LineNr guibg=none]])
 -- OneDark Highlight cmd([[hi NvimTreeNormal guibg=#20242c]])
-cmd([[hi NvimTreeNormal guibg=#f2f2f2]])
+cmd([[hi NvimTreeNormal guibg=#f0f0f0]])
 
