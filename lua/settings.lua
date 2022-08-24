@@ -27,6 +27,7 @@ opt.completeopt = "menuone,noselect,preview"
 opt.background = "light"
 opt.laststatus = 3
 opt.fillchars = "eob: ,vert:|"
+opt.cursorline = true
 -- Windows specific Terminal settings to use PowerSHell
 -- if vim.loop.os_uname().sysname == 'Windows_NT' then
 --   opt.shell = 'pwsh'
