@@ -51,6 +51,5 @@ cmd([[hi StatusLineNC guibg=none]])
 cmd([[hi StatusLine guibg=none]])
 cmd([[hi VertSplit guibg=none]])
 cmd([[hi LineNr guibg=none]])
--- OneDark Highlight cmd([[hi NvimTreeNormal guibg=#20242c]])
-cmd([[hi! link NvimTreeNormal CursorLine]])
+cmd([[hi! link NvimTreeNormal lualine_c_normal]])
 

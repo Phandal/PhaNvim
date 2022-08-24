@@ -15,7 +15,7 @@ require('packer').startup(function(use)
   use ('wbthomason/packer.nvim')                                  -- Plugin Manager
   use ('norcalli/nvim-base16.lua')                                -- Theme
   use ({ 'kyazdani42/nvim-tree.lua',                              -- Tree like file manager
-        requires = { 'kyazdani42/nvim-web-devicons' }           
+        requires = { 'kyazdani42/nvim-web-devicons' }             -- Pretty icons in NvimTree
       })
   use ('hoob3rt/lualine.nvim')                                    -- Different modeline
   use ({ 'nvim-telescope/telescope.nvim',                         -- Fuzzy Finder
@@ -33,7 +33,7 @@ require('packer').startup(function(use)
   use ('nanotee/luv-vimdocs')                                     -- libuv docs in Neovim
   use ('saadparwaiz1/cmp_luasnip')                                -- Completion Plugin to show snippets
   -- use ('Phandal/sdfcli.nvim')                                     -- SDF plugin
-  use ('~/Development/sdfcli.nvim/')
+  use ('~/Development/sdfcli-nvim/')
 
   if packer_bootstrap then
     require("packer").sync()
