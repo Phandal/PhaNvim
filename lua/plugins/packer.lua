@@ -24,6 +24,7 @@ require('packer').startup(function(use)
   use ({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })  -- Syntax highlighting using TreeSitter
   use ('windwp/nvim-autopairs')                                   -- Automatically adds closing bracket
   use ('lukas-reineke/indent-blankline.nvim')                     -- Shows a symbol for indents
+  use ('folke/todo-comments.nvim')                                -- Highlights TODO and other comments
   use ('neovim/nvim-lspconfig')                                   -- Base set of LSP configs
   use ('folke/lua-dev.nvim')                                      -- Add functionality to lua server
   use ('hrsh7th/nvim-cmp')                                        -- Completion engine

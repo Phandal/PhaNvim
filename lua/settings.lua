@@ -28,6 +28,8 @@ opt.background = "light"
 opt.laststatus = 3
 opt.fillchars = "eob: ,vert:|"
 opt.cursorline = true
+opt.list = true
+opt.listchars = opt.listchars + 'eol:﬋'
 -- Windows specific Terminal settings to use PowerSHell
 -- if vim.loop.os_uname().sysname == 'Windows_NT' then
 --   opt.shell = 'pwsh'
