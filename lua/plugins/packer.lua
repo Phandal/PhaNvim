@@ -24,17 +24,18 @@ require('packer').startup(function(use)
   use ({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })  -- Syntax highlighting using TreeSitter
   use ('windwp/nvim-autopairs')                                   -- Automatically adds closing bracket
   use ('lukas-reineke/indent-blankline.nvim')                     -- Shows a symbol for indents
+  use ('onsails/lspkind.nvim')                                    -- Shows pictograms in completion menu
   use ('folke/todo-comments.nvim')                                -- Highlights TODO and other comments
   use ('neovim/nvim-lspconfig')                                   -- Base set of LSP configs
   use ('folke/lua-dev.nvim')                                      -- Add functionality to lua server
   use ('hrsh7th/nvim-cmp')                                        -- Completion engine
   use ('hrsh7th/cmp-nvim-lsp')                                    -- Completion for LSP
   use ('hrsh7th/cmp-nvim-lsp-signature-help')                     -- Completion Plugin to show signatures
+  use ('saadparwaiz1/cmp_luasnip')                                -- Completion Plugin to show snippets
   use ('L3MON4D3/LuaSnip')                                        -- Snippet Plugin
   use ('nanotee/luv-vimdocs')                                     -- libuv docs in Neovim
-  use ('saadparwaiz1/cmp_luasnip')                                -- Completion Plugin to show snippets
-  -- use ('Phandal/sdfcli.nvim')                                     -- SDF plugin
   use ('~/Development/sdfcli-nvim/')
+  -- use ('Phandal/sdfcli.nvim')                                     -- SDF plugin
 
   if packer_bootstrap then
     require("packer").sync()

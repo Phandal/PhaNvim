@@ -1,9 +1,16 @@
 local cmp = require("cmp")
+local lspkind = require("lspkind")
 
 local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
+  formatting = { -- This is for lspkind
+    format = lspkind.cmp_format({
+      mode = 'symbol_text',
+      maxwidth = 50,
+    })
+  },
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body)

@@ -17,18 +17,19 @@ git clone https://github.com/Phandal/PhaNvim /path/to/your/config/location/nvim
 
 | Plugin                      | Usage                         |
 | --------------------------- | ----------------------------- |
-| packer                      | Plugin Manager                |
-| nvim-base16                 | ColorScheme                   |
-| nvim-tree                   | Tree-Like File Manager        |
+| packer.nvim                 | Plugin Manager                |
+| nvim-base16.lua             | ColorScheme                   |
+| nvim-tree.lua               | Tree-Like File Manager        |
 | nvim-web-devicons           | Fancy Icons for Nvim-Tree     |
-| lualine                     | StatusLine and BufferLine     |
-| telescope                   | Fuzzy Finder/Command Palette  |
-| plenary                     | Dependency Plugin             |
+| lualine.nvim                | StatusLine and BufferLine     |
+| telescope.nvim              | Fuzzy Finder/Command Palette  |
+| plenary.nvim                | Dependency Plugin             |
 | nvim-treesitter             | Syntax Highlighting           |
 | nvim-autopairs              | Closing Bracket Support       |
-| indent-blankline            | Highlight Indents             |
+| indent-blankline.nvim       | Highlight Indents             |
+| lspkind.nvim                | Adds icons in completion menu |
 | nvim-lspconfig              | Server Configurations for LSP |
-| lua-dev                     | Better Lua LSP support        |
+| lua-dev.nvim                | Better Lua LSP support        |
 | nvim-cmp                    | Completion engine             |
 | cmp-nvim-lsp                | LSP Completion support        |
 | cmp-nvim-lsp-signature-help | Signature Completion Support  |
