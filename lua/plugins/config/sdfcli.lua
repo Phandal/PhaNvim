@@ -7,5 +7,5 @@ end
 
 -- Setup for the plugin
 require('sdfcli-nvim').setup({
-  sdfcli_cmd = cmd_location
+  sdfcli_cmd_path = cmd_location
 })
