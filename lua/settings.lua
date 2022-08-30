@@ -48,4 +48,3 @@ cmd([[hi StatusLine guibg=none]])
 cmd([[hi VertSplit guibg=none]])
 cmd([[hi LineNr guibg=none]])
 cmd([[hi! link NvimTreeNormal lualine_c_normal]])
-

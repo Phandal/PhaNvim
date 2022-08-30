@@ -5,6 +5,14 @@ local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
+  -- window = {
+  --   completion = {
+  --     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+  --   },
+  --   documentation = {
+  --     border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+  --   }
+  -- },
   formatting = { -- This is for lspkind
     format = lspkind.cmp_format({
       mode = 'symbol_text',
