@@ -1,6 +1,6 @@
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
@@ -20,7 +20,7 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -35,7 +35,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+  --vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
@@ -62,7 +62,7 @@ end
 local luadev = require("lua-dev").setup({
   -- add any options here, or leave empty to use the default settings
   lspconfig = {
-    cmd = {"lua-language-server"},
+    cmd = { "lua-language-server" },
     on_attach = on_attach,
     capabilities = capabilities,
     flags = {
@@ -77,7 +77,7 @@ local luadev = require("lua-dev").setup({
         },
         diagnostics = {
           -- Get the language server to recognize the `vim` global
-          globals = {'vim'},
+          globals = { 'vim' },
         },
         workspace = {
           -- Make the server aware of Neovim runtime files
