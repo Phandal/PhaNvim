@@ -5,6 +5,10 @@ else
   theme = 'onedark'
 end
 
+local getcurrentTime = function()
+  return os.date('%X'):sub(0,5).. ' '
+end
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -21,7 +25,7 @@ require('lualine').setup {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_x = {getcurrentTime, 'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
