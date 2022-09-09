@@ -29,7 +29,7 @@ opt.laststatus = 3
 opt.fillchars = "eob: ,vert:│"
 opt.cursorline = true
 opt.list = true
-opt.listchars = opt.listchars + 'eol:﬋'
+opt.listchars = opt.listchars + 'eol:﬋, trail:∙'
 opt.relativenumber = true
 
 -- Global variables

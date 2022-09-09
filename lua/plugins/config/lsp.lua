@@ -35,7 +35,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  --vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+  vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
@@ -46,7 +46,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'ccls', 'tsserver', 'eslint', 'pyright' }
+local servers = { 'ccls', 'tsserver', 'eslint', 'pyright', 'jsonls' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
