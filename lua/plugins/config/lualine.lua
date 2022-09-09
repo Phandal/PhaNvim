@@ -5,8 +5,15 @@ else
   theme = 'onedark'
 end
 
-local getcurrentTime = function()
+local get_current_time = function()
   return os.date('%X'):sub(0,5).. ' '
+end
+
+local get_sdfcli_env = function()
+  if (vim.g.SDFCLIENV == nil) then
+    return ''
+  end
+  return vim.g.SDFCLIENV
 end
 
 require('lualine').setup {
@@ -25,7 +32,7 @@ require('lualine').setup {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    lualine_x = {getcurrentTime, 'encoding', 'fileformat', 'filetype'},
+    lualine_x = {get_current_time, get_sdfcli_env, 'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
