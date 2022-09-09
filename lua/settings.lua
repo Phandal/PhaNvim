@@ -30,6 +30,7 @@ opt.fillchars = "eob: ,vert:│"
 opt.cursorline = true
 opt.list = true
 opt.listchars = opt.listchars + 'eol:﬋'
+opt.relativenumber = true
 
 -- Global variables
 g.mapleader = " "
