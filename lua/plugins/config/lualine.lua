@@ -10,10 +10,11 @@ local get_current_time = function()
 end
 
 local get_sdfcli_env = function()
-  if (vim.g.SDFCLIENV == nil) then
-    return ''
+  local env = require('sdfcli-nvim.config').opts.environment_name
+  if env ~= nil then
+    return env
   end
-  return vim.g.SDFCLIENV
+  return ''
 end
 
 require('lualine').setup {
