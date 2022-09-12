@@ -18,6 +18,7 @@ require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons' }             -- Pretty icons in NvimTree
       })
   use ('hoob3rt/lualine.nvim')                                    -- Different modeline
+  use ('WhoIsSethDaniel/lualine-lsp-progress')                    -- LSP Server Progress in lualine
   use ({ 'nvim-telescope/telescope.nvim',                         -- Fuzzy Finder
         requires = { 'nvim-lua/plenary.nvim' }
       })
