@@ -22,6 +22,7 @@ require('packer').startup(function(use)
   use ({ 'nvim-telescope/telescope.nvim',                         -- Fuzzy Finder
         requires = { 'nvim-lua/plenary.nvim' }
       })
+  use ('lewis6991/gitsigns.nvim')                                 -- Git integration
   use ({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })  -- Syntax highlighting using TreeSitter
   use ('windwp/nvim-autopairs')                                   -- Automatically adds closing bracket
   use ('lukas-reineke/indent-blankline.nvim')                     -- Shows a symbol for indents

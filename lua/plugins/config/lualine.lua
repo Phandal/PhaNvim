@@ -2,7 +2,7 @@ local theme
 if vim.loop.os_uname().sysname == "Linux" and vim.loop.os_gethostname() == "ArchBox" then
   theme = 'solarized_light'
 else
-  theme = 'onedark'
+  theme = 'auto'
 end
 
 local get_current_time = function()
@@ -46,5 +46,21 @@ require('lualine').setup {
     lualine_z = {}
   },
   tabline = {},
+  winbar = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  inactive_winbar = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {}
+  },
   extensions = {'nvim-tree', 'quickfix'}
 }
