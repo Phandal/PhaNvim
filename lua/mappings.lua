@@ -8,6 +8,7 @@ set_key("n", "<Leader>t", [[<CMD>10sp<CR><CMD>term<CR>]], key_opts)
 set_key("n", "<C-n>", [[<CMD>NvimTreeToggle<CR>]], key_opts)
 
 -- Telescope specific
+set_key("n", "<Leader>bs", [[<CMD>lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>]], key_opts)
 set_key("n", "<Leader>ff", [[<CMD>lua require("telescope.builtin").find_files()<CR>]], key_opts)
 set_key("n", "<Leader>fg", [[<CMD>lua require("telescope.builtin").live_grep()<CR>]], key_opts)
 set_key("n", "<Leader>fb", [[<CMD>lua require("telescope.builtin").buffers()<CR>]], key_opts)

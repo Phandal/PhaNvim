@@ -36,6 +36,11 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+
+  -- AutoCommands
+  vim.api.nvim_create_autocmd("CursorHold", { pattern = "<buffer>", command = "lua vim.lsp.buf.document_highlight()" })
+  vim.api.nvim_create_autocmd("CursorHoldI", { pattern = "<buffer>", command = "lua vim.lsp.buf.document_highlight()" })
+  vim.api.nvim_create_autocmd("CursorMoved", { pattern = "<buffer>", command = "lua vim.lsp.buf.clear_references()" })
 end
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
