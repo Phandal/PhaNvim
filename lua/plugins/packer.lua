@@ -36,8 +36,7 @@ require('packer').startup(function(use)
   use ('saadparwaiz1/cmp_luasnip')                                -- Completion Plugin to show snippets
   use ('L3MON4D3/LuaSnip')                                        -- Snippet Plugin
   use ('nanotee/luv-vimdocs')                                     -- libuv docs in Neovim
-  use ('~/Development/sdfcli-nvim/')
-  -- use ('Phandal/sdfcli.nvim')                                     -- SDF plugin
+  use ('~/Development/sdfcli-nvim/')                              -- SDF Plugin
 
   if packer_bootstrap then
     require("packer").sync()
