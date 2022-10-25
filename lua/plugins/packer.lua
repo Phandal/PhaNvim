@@ -29,7 +29,7 @@ require('packer').startup(function(use)
   use ('onsails/lspkind.nvim')                                    -- Shows pictograms in completion menu
   use ('folke/todo-comments.nvim')                                -- Highlights TODO and other comments
   use ('neovim/nvim-lspconfig')                                   -- Base set of LSP configs
-  use ('folke/lua-dev.nvim')                                      -- Add functionality to lua server
+  use ('folke/neodev.nvim')                                       -- Add functionality to lua server
   use ('hrsh7th/nvim-cmp')                                        -- Completion engine
   use ('hrsh7th/cmp-nvim-lsp')                                    -- Completion for LSP
   use ('hrsh7th/cmp-nvim-lsp-signature-help')                     -- Completion Plugin to show signatures
