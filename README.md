@@ -37,7 +37,7 @@ git clone https://github.com/Phandal/PhaNvim /path/to/your/config/location/nvim
 | lspkind.nvim                | Adds icons in completion menu |
 | todo-comments.nvim          | Highlight TODO in Files       |
 | nvim-lspconfig              | Server Configurations for LSP |
-| lua-dev.nvim                | Better Lua LSP support        |
+| neodev.nvim                | Better Lua LSP support        |
 | nvim-cmp                    | Completion engine             |
 | cmp-nvim-lsp                | LSP Completion support        |
 | cmp-nvim-lsp-signature-help | Signature Completion Support  |
