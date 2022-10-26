@@ -1,11 +1,16 @@
 # PhaNvim
 
-![Screenshot](./screenshots/main.png)
-![Screenshot](./screenshots/telescope.png)
+![Screenshot](./screenshots/main.jpeg)
+![Screenshot](./screenshots/telescope.jpeg)
 Custom Neovim configuration written in Lua, focused on ease of use and portability between all of my systems.
 
-1. [Installation](#installation)
-2. [Plugins](#plugins)
+1. [Dependencies](#dependencies)
+2. [Installation](#installation)
+3. [Plugins](#plugins)
+
+## Dependencies
+- [fzf](https://github.com/junegunn/fzf)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
 
 ## Installation
 To install just clone this repo to your neovim configuration location
@@ -25,13 +30,14 @@ git clone https://github.com/Phandal/PhaNvim /path/to/your/config/location/nvim
 | lualine-lsp-progress        | LSP Status in StatusLine      |
 | telescope.nvim              | Fuzzy Finder/Command Palette  |
 | plenary.nvim                | Dependency Plugin             |
+| gitsigns.nvim               | Git integration               |
 | nvim-treesitter             | Syntax Highlighting           |
 | nvim-autopairs              | Closing Bracket Support       |
 | indent-blankline.nvim       | Highlight Indents             |
 | lspkind.nvim                | Adds icons in completion menu |
 | todo-comments.nvim          | Highlight TODO in Files       |
 | nvim-lspconfig              | Server Configurations for LSP |
-| lua-dev.nvim                | Better Lua LSP support        |
+| neodev.nvim                | Better Lua LSP support        |
 | nvim-cmp                    | Completion engine             |
 | cmp-nvim-lsp                | LSP Completion support        |
 | cmp-nvim-lsp-signature-help | Signature Completion Support  |
