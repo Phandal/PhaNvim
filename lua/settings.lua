@@ -32,6 +32,7 @@ opt.list = true
 opt.listchars = opt.listchars + 'eol:﬋, trail:∙'
 opt.relativenumber = true
 opt.virtualedit = "all"
+opt.guicursor = "n-v-c-sm:block-blinkwait300-blinkon200-blinkoff150,i-ci-ve:ver25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20"
 
 -- Global variables
 g.mapleader = " "
