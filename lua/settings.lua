@@ -31,6 +31,7 @@ opt.cursorline = true
 opt.list = true
 opt.listchars = opt.listchars + 'eol:﬋, trail:∙'
 opt.relativenumber = true
+opt.virtualedit = "all"
 
 -- Global variables
 g.mapleader = " "
