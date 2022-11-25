@@ -44,7 +44,6 @@ autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.signcolumn = 'no'" }
 autocmd("TermOpen", { pattern = "*", command = "startinsert" })
 autocmd("FileType", { pattern = "help", command = "nnoremap q <CMD>bd!<CR>" })
 autocmd("FileType", { pattern = "qf", command = "nnoremap q <CMD>bd!<CR>" })
-autocmd("BufWritePre", { pattern = "*.tsx,*.ts,*.jsx,*.js", command = "EslintFixAll" })
 
 -- Highlights
 cmd([[hi SignColumn guibg=none ctermbg=none]])

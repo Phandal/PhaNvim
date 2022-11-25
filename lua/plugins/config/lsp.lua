@@ -41,6 +41,10 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_create_autocmd("CursorHold", { pattern = "<buffer>", command = "lua vim.lsp.buf.document_highlight()" })
   vim.api.nvim_create_autocmd("CursorHoldI", { pattern = "<buffer>", command = "lua vim.lsp.buf.document_highlight()" })
   vim.api.nvim_create_autocmd("CursorMoved", { pattern = "<buffer>", command = "lua vim.lsp.buf.clear_references()" })
+
+  if client.name == 'eslint' then
+    vim.api.nvim_create_autocmd("BufWritePre", { pattern = "*.tsx,*.ts,*.jsx,*.js", command = "EslintFixAll" })
+  end
 end
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
