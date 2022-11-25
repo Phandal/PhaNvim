@@ -26,7 +26,8 @@ git clone https://github.com/Phandal/PhaNvim /path/to/your/config/location/nvim
 | nvim-base16.lua             | ColorScheme                   |
 | nvim-tree.lua               | Tree-Like File Manager        |
 | nvim-web-devicons           | Fancy Icons for Nvim-Tree     |
-| lualine.nvim                | StatusLine and BufferLine     |
+| lualine.nvim                | StatusLine                    |
+| bufferline.nvim             | Bufferline                    |
 | lualine-lsp-progress        | LSP Status in StatusLine      |
 | telescope.nvim              | Fuzzy Finder/Command Palette  |
 | plenary.nvim                | Dependency Plugin             |
@@ -37,7 +38,7 @@ git clone https://github.com/Phandal/PhaNvim /path/to/your/config/location/nvim
 | lspkind.nvim                | Adds icons in completion menu |
 | todo-comments.nvim          | Highlight TODO in Files       |
 | nvim-lspconfig              | Server Configurations for LSP |
-| neodev.nvim                | Better Lua LSP support        |
+| neodev.nvim                 | Better Lua LSP support        |
 | nvim-cmp                    | Completion engine             |
 | cmp-nvim-lsp                | LSP Completion support        |
 | cmp-nvim-lsp-signature-help | Signature Completion Support  |
