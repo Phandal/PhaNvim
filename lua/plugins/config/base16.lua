@@ -6,4 +6,5 @@ local base16 = require('base16')
 --   base16(base16.themes['black-metal-immortal'], true)
 -- end
 
-base16(base16.themes['black-metal-immortal'], true)
+--base16(base16.themes['black-metal-immortal'], true)
+base16(base16.themes['tomorrow-night'], true)
