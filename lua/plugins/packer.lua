@@ -18,13 +18,13 @@ require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons' }             -- Pretty icons in NvimTree
       })
   use ('hoob3rt/lualine.nvim')                                    -- Different modeline
-  use ({ 'akinsho/bufferline.nvim',
+  use ({ 'akinsho/bufferline.nvim',                               -- Better bufferline
         tag = "v3.*",
-        requires = { 'nvim-tree/nvim-web-devicons'}
+        requires = { 'nvim-tree/nvim-web-devicons'}               -- Pretty icons in NvimTree
       })
   use ('WhoIsSethDaniel/lualine-lsp-progress')                    -- LSP Server Progress in lualine
   use ({ 'nvim-telescope/telescope.nvim',                         -- Fuzzy Finder
-        requires = { 'nvim-lua/plenary.nvim' }
+        requires = { 'nvim-lua/plenary.nvim' }                    -- Dependency Plugin
       })
   use ('lewis6991/gitsigns.nvim')                                 -- Git integration
   use ({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })  -- Syntax highlighting using TreeSitter
