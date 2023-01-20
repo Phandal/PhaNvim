@@ -7,7 +7,7 @@ local theme
 theme = 'auto'
 
 local get_current_time = function()
-  return os.date('%X'):sub(0,5).. ' '
+  return os.date('%R') .. ' '
 end
 
 local get_sdfcli_env = function()
@@ -47,21 +47,21 @@ require('lualine').setup {
     lualine_z = {}
   },
   tabline = {},
-  -- winbar = {
-  --   lualine_a = {},
-  --   lualine_b = {},
-  --   lualine_c = {'filename'},
-  --   lualine_x = {},
-  --   lualine_y = {},
-  --   lualine_z = {}
-  -- },
-  -- inactive_winbar = {
-  --   lualine_a = {},
-  --   lualine_b = {},
-  --   lualine_c = {'filename'},
-  --   lualine_x = {},
-  --   lualine_y = {},
-  --   lualine_z = {}
-  -- },
+  winbar = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  inactive_winbar = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {}
+  },
   extensions = {'nvim-tree', 'quickfix'}
 }
