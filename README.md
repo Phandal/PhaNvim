@@ -27,7 +27,6 @@ git clone https://github.com/Phandal/PhaNvim /path/to/your/config/location/nvim
 | nvim-tree.lua               | Tree-Like File Manager        |
 | nvim-web-devicons           | Fancy Icons for Nvim-Tree     |
 | lualine.nvim                | StatusLine                    |
-| bufferline.nvim             | Bufferline                    |
 | lualine-lsp-progress        | LSP Status in StatusLine      |
 | telescope.nvim              | Fuzzy Finder/Command Palette  |
 | plenary.nvim                | Dependency Plugin             |
