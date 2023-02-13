@@ -4,7 +4,7 @@ local theme
 -- else
 --   theme = 'auto'
 -- end
-theme = 'auto'
+theme = 'nord'
 
 local get_current_time = function()
   return os.date('%R') .. ' '
