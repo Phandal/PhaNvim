@@ -91,7 +91,7 @@ require("neodev").setup({
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'rust_analyzer', 'lsp_lua', 'clangd', 'tsserver', 'cssls', 'eslint', 'pyright', 'jsonls' }
+local servers = { 'rust_analyzer', 'lua_ls', 'clangd', 'tsserver', 'cssls', 'eslint', 'pyright', 'jsonls' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
