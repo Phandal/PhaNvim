@@ -3,8 +3,8 @@ require('telescope').setup{
     -- Default configuration for telescope goes here:
     -- config_key = value,
     winblend = 10,
-    prompt_prefix = " ",
-    selection_caret = " ",
+    prompt_prefix = "󰍉 ",
+    selection_caret = "󰜴 ",
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
     layout_strategy = 'vertical',
     vimgrep_arguments = {
