@@ -1,5 +1,5 @@
 require('plugins.config.nvim-tree')
-require('plugins.config.base16')
+require('plugins.config.colors')
 require('plugins.config.lualine')
 require('plugins.config.telescope')
 require('plugins.config.treesitter')

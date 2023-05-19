@@ -23,7 +23,8 @@ git clone https://github.com/Phandal/PhaNvim /path/to/your/config/location/nvim
 | Plugin                      | Usage                         |
 | --------------------------- | ----------------------------- |
 | packer.nvim                 | Plugin Manager                |
-| nvim-base16.lua             | ColorScheme                   |
+| github-nvim-theme           | ColorScheme                   |
+| nord.nvim                   | ColorScheme                   |
 | nvim-tree.lua               | Tree-Like File Manager        |
 | nvim-web-devicons           | Fancy Icons for Nvim-Tree     |
 | lualine.nvim                | StatusLine                    |
