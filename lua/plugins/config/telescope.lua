@@ -6,7 +6,7 @@ require('telescope').setup{
     prompt_prefix = "󰍉 ",
     selection_caret = "󰜴 ",
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-    layout_strategy = 'vertical',
+    layout_strategy = 'bottom_pane',
     vimgrep_arguments = {
       "rg",
       "--color=never",
