@@ -6,4 +6,5 @@ vim.g.nord_enable_sidebar_background = true
 vim.g.nord_italic = true
 vim.g.nord_uniform_diff_background = false
 vim.g.nord_bold = true
-require('nord').set()
+-- require('nord').set()
+vim.cmd[[color elflord]]
