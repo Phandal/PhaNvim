@@ -1,10 +1,5 @@
 local theme
--- if vim.loop.os_uname().sysname == "Linux" and vim.loop.os_gethostname() == "ArchBox" then
---   theme = 'solarized_light'
--- else
---   theme = 'auto'
--- end
-theme = 'nord'
+theme = 'auto'
 
 local get_current_time = function()
   return os.date('%R') .. ' '

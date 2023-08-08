@@ -32,6 +32,7 @@ opt.listchars = opt.listchars + 'eol:󱞥, trail:·'
 opt.relativenumber = true
 opt.guicursor = "n-v-c-sm:block-blinkwait300-blinkon200-blinkoff150,i-ci-ve:ver25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20"
 opt.shiftround = true
+opt.smartcase = true
 
 -- Global variables
 g.mapleader = " "
@@ -42,13 +43,10 @@ autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.relativenumber = fal
 autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.signcolumn = 'no'" })
 autocmd("TermOpen", { pattern = "*", command = "startinsert" })
 
--- Highlights
--- cmd([[hi SignColumn guibg=none ctermbg=none]])
--- cmd([[hi StatusLineNC guibg=none]])
--- cmd([[hi StatusLine guibg=none]])
--- cmd([[hi VertSplit guibg=none]])
--- cmd([[hi LineNr guibg=none]])
--- cmd([[hi! link NvimTreeNormal lualine_c_normal]])
--- cmd([[hi! link LspReferenceText Visual]])
--- cmd([[hi! link LspReferenceRead Visual]])
--- cmd([[hi! link LspReferenceWrite Visual]])
+-- Turn off Semantic Tokens as colorscheme does not support it
+vim.api.nvim_create_autocmd("LspAttach", {
+callback = function(args)
+local client = vim.lsp.get_client_by_id(args.data.client_id)
+client.server_capabilities.semanticTokensProvider = nil
+end,
+})
