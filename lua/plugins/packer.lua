@@ -25,6 +25,7 @@ require('packer').startup(function(use)
       })
   use ('lewis6991/gitsigns.nvim')                                 -- Git integration
   use ({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })  -- Syntax highlighting using TreeSitter
+  use ('nvim-treesitter/playground')                              -- Playground for TreeSitter
   use ('windwp/nvim-autopairs')                                   -- Automatically adds closing bracket
   use ('lukas-reineke/indent-blankline.nvim')                     -- Shows a symbol for indents
   use ('onsails/lspkind.nvim')                                    -- Shows pictograms in completion menu
