@@ -15,6 +15,7 @@ require('packer').startup(function(use)
   use ('wbthomason/packer.nvim')                                  -- Plugin Manager
   use ('projekt0n/github-nvim-theme')                             -- Github Theme
   use ('shaunsingh/nord.nvim')                                    -- Nord Theme
+  use ('morhetz/gruvbox')                                         -- Gruvbox Theme
   use ({ 'kyazdani42/nvim-tree.lua',                              -- Tree like file manager
         requires = { 'kyazdani42/nvim-web-devicons' }             -- Pretty icons in NvimTree
       })
