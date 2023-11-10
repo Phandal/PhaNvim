@@ -22,7 +22,7 @@ git clone https://github.com/Phandal/PhaNvim /path/to/your/config/location/nvim
 
 | Plugin                      | Usage                         |
 | --------------------------- | ----------------------------- |
-| packer.nvim                 | Plugin Manager                |
+| lazy.nvim                   | Plugin Manager                |
 | github-nvim-theme           | ColorScheme                   |
 | nord.nvim                   | ColorScheme                   |
 | gruvbox                     | ColorScheme                   |
@@ -34,10 +34,10 @@ git clone https://github.com/Phandal/PhaNvim /path/to/your/config/location/nvim
 | plenary.nvim                | Dependency Plugin             |
 | gitsigns.nvim               | Git integration               |
 | nvim-treesitter             | Syntax Highlighting           |
+| playground                  | Tree Sitter Play Ground       |
 | nvim-autopairs              | Closing Bracket Support       |
 | indent-blankline.nvim       | Highlight Indents             |
 | lspkind.nvim                | Adds icons in completion menu |
-| todo-comments.nvim          | Highlight TODO in Files       |
 | nvim-lspconfig              | Server Configurations for LSP |
 | neodev.nvim                 | Better Lua LSP support        |
 | nvim-cmp                    | Completion engine             |
