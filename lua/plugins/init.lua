@@ -1,2 +1,2 @@
-require('plugins.packer')
+require('plugins.lazy')
 require('plugins.config')
