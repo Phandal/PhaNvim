@@ -22,7 +22,7 @@ opt.shortmess = "filnxtToOFc"
 opt.signcolumn = "yes"
 opt.termguicolors = true
 opt.ignorecase = true
-opt.completeopt = "menuone,noselect,preview"
+opt.completeopt = "menuone,noselect,noinsert,preview"
 opt.background = "dark"
 opt.laststatus = 3
 opt.fillchars = "eob: ,vert:│"
@@ -33,6 +33,7 @@ opt.relativenumber = true
 opt.guicursor = "n-v-c-sm:block-blinkwait300-blinkon200-blinkoff150,i-ci-ve:ver25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20"
 opt.shiftround = true
 opt.smartcase = true
+opt.grepprg = "rg --vimgrep"
 
 -- Global variables
 g.mapleader = " "
