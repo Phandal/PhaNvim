@@ -36,6 +36,7 @@ opt.smartcase = true
 opt.grepprg = "rg --vimgrep"
 opt.path = opt.path + "**"
 opt.wildmenu = true
+opt.wildignorecase = true
 
 -- Global variables
 g.mapleader = " "
