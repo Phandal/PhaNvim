@@ -34,6 +34,8 @@ opt.guicursor = "n-v-c-sm:block-blinkwait300-blinkon200-blinkoff150,i-ci-ve:ver2
 opt.shiftround = true
 opt.smartcase = true
 opt.grepprg = "rg --vimgrep"
+opt.path = opt.path + "**"
+opt.wildmenu = true
 
 -- Global variables
 g.mapleader = " "
