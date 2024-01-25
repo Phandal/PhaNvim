@@ -1,6 +1,7 @@
 local g = vim.g
 local opt = vim.opt
 local autocmd = vim.api.nvim_create_autocmd
+local usercmd = vim.api.nvim_create_user_command
 local cmd = vim.cmd
 
 -- Options
@@ -47,10 +48,7 @@ autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.relativenumber = fal
 autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.signcolumn = 'no'" })
 autocmd("TermOpen", { pattern = "*", command = "startinsert" })
 
--- Turn off Semantic Tokens as colorscheme does not support it
-vim.api.nvim_create_autocmd("LspAttach", {
-callback = function(args)
-local client = vim.lsp.get_client_by_id(args.data.client_id)
-client.server_capabilities.semanticTokensProvider = nil
-end,
-})
+-- Custom Commands
+usercmd('Deploy', '!suitecloud project:deploy', {})
+usercmd('Preview', '!suitecloud project:deploy --dryrun', {})
+
