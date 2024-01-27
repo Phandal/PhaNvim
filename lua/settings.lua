@@ -2,7 +2,6 @@ local g = vim.g
 local opt = vim.opt
 local autocmd = vim.api.nvim_create_autocmd
 local usercmd = vim.api.nvim_create_user_command
-local cmd = vim.cmd
 
 -- Options
 opt.autowrite = true
@@ -27,7 +26,7 @@ opt.ignorecase = true
 opt.completeopt = "menuone,noselect,noinsert,preview"
 opt.background = "dark"
 opt.laststatus = 3
-opt.fillchars = "eob: ,vert:│"
+opt.fillchars = { eob = " ", vert = "│" }
 opt.cursorline = false
 opt.list = true
 opt.listchars = opt.listchars + 'eol:󱞥, trail:·, tab:  '
