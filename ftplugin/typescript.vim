@@ -35,8 +35,8 @@ if (has("gui_win32") || has("gui_gtk")) && !exists("b:browsefilter")
 		\	"JSON Files (*.json)\t*.json\n" .
 		\	"All Files (*.*)\t*.*\n"
 endif
-       
-let b:undo_ftplugin = "setl fo< com< cms< sua< | unlet! b:browsefilter" 
+
+let b:undo_ftplugin = "setl fo< com< cms< sua< | unlet! b:browsefilter"
 
 let &cpo = s:cpo_save
 unlet s:cpo_save
