@@ -5,6 +5,7 @@ local usercmd = vim.api.nvim_create_user_command
 local cmd = vim.cmd
 
 -- Options
+opt.autowrite = true
 opt.syntax = "on"
 opt.number = true
 opt.tabstop = 2
