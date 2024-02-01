@@ -46,4 +46,3 @@ git clone https://github.com/Phandal/PhaNvim /path/to/your/config/location/nvim
 | cmp-luasnip                 | Snippet Completion Support    |
 | LuaSnip                     | Snippet Support               |
 | luv-vimdocs                 | libuv Docs in Neovim          |
-| sdfcli.nvim                 | SDFCLI project support        |

@@ -5,14 +5,6 @@ local get_current_time = function()
   return os.date('%R') .. ' '
 end
 
-local get_sdfcli_env = function()
-  local env = require('sdfcli-nvim.config').opts.environment_name
-  if env ~= nil then
-    return env
-  end
-  return ''
-end
-
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -29,7 +21,7 @@ require('lualine').setup {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename', 'lsp_progress'},
-    lualine_x = {get_current_time, get_sdfcli_env, 'encoding', 'fileformat', 'filetype'},
+    lualine_x = {get_current_time, 'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
