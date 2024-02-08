@@ -39,4 +39,5 @@ require('lazy').setup({
   'saadparwaiz1/cmp_luasnip',                                -- Completion Plugin to show snippets
   'L3MON4D3/LuaSnip',                                        -- Snippet Plugin
   'nanotee/luv-vimdocs',                                     -- libuv docs in Neovim
+  { dir =  '~/Development/suitecloud.nvim/main' }            -- Custom Work in progress
 })

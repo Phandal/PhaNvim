@@ -35,7 +35,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>f', vim.lsp.buf.format, bufopts)
+  vim.keymap.set('n', '<space>F', vim.lsp.buf.format, bufopts)
 
   -- AutoCommands
   if client.server_capabilities.documentHighlightProvider then
@@ -91,7 +91,8 @@ require("neodev").setup({
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'rust_analyzer', 'lua_ls', 'clangd', 'tsserver', 'cssls', 'tailwindcss', 'html', 'eslint', 'pyright', 'jsonls', 'ocamllsp' }
+local servers = { 'rust_analyzer', 'lua_ls', 'clangd', 'tsserver', 'cssls', 'tailwindcss', 'html', 'eslint', 'pyright',
+  'jsonls', 'ocamllsp' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
@@ -102,4 +103,3 @@ for _, lsp in pairs(servers) do
     }
   }
 end
-
