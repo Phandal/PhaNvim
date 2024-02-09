@@ -44,6 +44,10 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_create_autocmd("CursorMoved", { pattern = "<buffer>", command = "lua vim.lsp.buf.clear_references()" })
   end
 
+  if client.server_capabilities.documentFormattingProvider then
+    vim.api.nvim_create_autocmd("BufWritePre", { pattern = "<buffer>", command = "lua vim.lsp.buf.format()" });
+  end
+
   if client.name == 'eslint' then
     vim.api.nvim_create_autocmd("BufWritePre", { pattern = "*.tsx,*.ts,*.jsx,*.js", command = "EslintFixAll" })
   end
@@ -91,7 +95,8 @@ require("neodev").setup({
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'rust_analyzer', 'lua_ls', 'clangd', 'tsserver', 'cssls', 'html', 'eslint', 'pyright', 'jsonls', 'ocamllsp' }
+local servers = { 'rust_analyzer', 'lua_ls', 'clangd', 'tsserver', 'cssls', 'html', 'eslint', 'pyright', 'jsonls',
+  'ocamllsp' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
