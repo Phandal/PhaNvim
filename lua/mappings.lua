@@ -17,4 +17,8 @@ set_key("n", "<Leader>ls", [[<CMD>lua require("telescope.builtin").git_status()<
 set_key("n", "<Leader>li", [[<CMD>lua require("telescope.builtin").lsp_implementations()<CR>]], key_opts)
 set_key("n", "<Leader>ld", [[<CMD>lua require("telescope.builtin").lsp_definitions()<CR>]], key_opts)
 set_key("n", "<Leader>lr", [[<CMD>lua require("telescope.builtin").lsp_references()<CR>]], key_opts)
-set_key("n", "<leader>lp", [[<CMD>lua require("telescope.builtin").diagnostics()<CR>]], key_opts)
+set_key("n", "<Leader>lp", [[<CMD>lua require("telescope.builtin").diagnostics()<CR>]], key_opts)
+
+-- Suitecloud specific
+set_key("n", "<Leader>sd", [[<CMD>Suitecloud deploy<CR>]], key_opts)
+set_key("n", "<Leader>sp", [[<CMD>Suitecloud preview<CR>]], key_opts)
