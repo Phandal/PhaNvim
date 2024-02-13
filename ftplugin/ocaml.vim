@@ -42,6 +42,9 @@ setlocal comments=sr:(*\ ,mb:\ ,ex:*)
 setlocal comments^=sr:(**,mb:\ \ ,ex:*)
 setlocal commentstring=(*%s*)
 
+" Color Column
+setlocal colorcolumn=80
+
 " Add mappings, unless the user didn't want this.
 if !exists("no_plugin_maps") && !exists("no_ocaml_maps")
   " (un)commenting
