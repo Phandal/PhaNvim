@@ -1,8 +1,13 @@
 local set_key = vim.api.nvim_set_keymap
 local key_opts = { noremap = true, silent = true }
 
+-- Terminal Mode specific
 set_key("t", "<ESC>", [[<C-\><C-n>]], key_opts)
 set_key("n", "<Leader>t", [[<CMD>10sp<CR><CMD>term<CR>]], key_opts)
+
+-- Quickfix specific
+set_key("n", "<Leader>j", [[<CMD>cnext<CR>]], key_opts)
+set_key("n", "<Leader>k", [[<CMD>cprev<CR>]], key_opts)
 
 -- NvimTree specific
 set_key("n", "<C-n>", [[<CMD>NvimTreeToggle<CR>]], key_opts)
