@@ -45,11 +45,11 @@ local on_attach = function(client, bufnr)
   end
 
   if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_create_autocmd("BufWritePre", { pattern = "<buffer>", command = "lua vim.lsp.buf.format()" });
+    vim.api.nvim_create_autocmd("BufWritePre", { buffer = bufnr, command = "lua vim.lsp.buf.format()" });
   end
 
   if client.name == 'eslint' then
-    vim.api.nvim_create_autocmd("BufWritePre", { pattern = "*.tsx,*.ts,*.jsx,*.js", command = "EslintFixAll" })
+    vim.api.nvim_create_autocmd("BufWritePre", { buffer = bufnr, command = "EslintFixAll" })
   end
 end
 
