@@ -9,34 +9,36 @@
 -- vim.g.nord_bold = true
 -- require('nord').set()
 
--- Gruvbox Lua Port
--- require("gruvbox").setup({
---   terminal_colors = true, -- add neovim terminal colors
---   undercurl = false,
---   underline = true,
---   bold = true,
---   italic = {
---     strings = true,
---     emphasis = true,
---     comments = true,
---     operators = false,
---     folds = true,
---   },
---   strikethrough = true,
---   invert_selection = false,
---   invert_signs = false,
---   invert_tabline = false,
---   invert_intend_guides = false,
---   inverse = true, -- invert background for search, diffs, statuslines and errors
---   contrast = "", -- can be "hard", "soft" or empty string
---   palette_overrides = {},
---   overrides = {
---     LspReferenceRead = { bg = "#3c3836"},
---     LspReferenceText = { bg = "#3c3836"},
---     LspReferenceWrite = { bg = "#3c3836"},
---   },
---   dim_inactive = false,
---   transparent_mode = false,
--- })
--- vim.cmd("colorscheme gruvbox")
-vim.cmd("colorscheme github_dark_dimmed")
+-- Gruvbox ColorScheme
+require("gruvbox").setup({
+  terminal_colors = true,  -- add neovim terminal colors
+  undercurl = false,
+  underline = true,
+  bold = true,
+  italic = {
+    strings = true,
+    emphasis = true,
+    comments = true,
+    operators = false,
+    folds = true,
+  },
+  strikethrough = true,
+  invert_selection = false,
+  invert_signs = false,
+  invert_tabline = false,
+  invert_intend_guides = false,
+  inverse = true,  -- invert background for search, diffs, statuslines and errors
+  contrast = "",   -- can be "hard", "soft" or empty string
+  palette_overrides = {},
+  overrides = {
+    LspReferenceRead = { bg = "#3c3836" },
+    LspReferenceText = { bg = "#3c3836" },
+    LspReferenceWrite = { bg = "#3c3836" },
+  },
+  dim_inactive = false,
+  transparent_mode = false,
+})
+vim.cmd("colorscheme gruvbox")
+
+-- Github Dark ColorScheme
+-- vim.cmd("colorscheme github_dark_dimmed")
