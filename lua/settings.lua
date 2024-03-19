@@ -29,9 +29,11 @@ opt.laststatus = 3
 opt.fillchars = { eob = " ", vert = "│" }
 opt.cursorline = false
 opt.list = true
-opt.listchars = opt.listchars + 'eol:󱞥, trail:·, tab:  '
+-- opt.listchars = opt.listchars + 'eol:󱞥, trail:·, tab:  '
+opt.listchars = opt.listchars + 'trail:·, tab:  '
 opt.relativenumber = true
-opt.guicursor = "n-v-c-sm:block-blinkwait300-blinkon200-blinkoff150,i-ci-ve:ver25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20"
+opt.guicursor =
+"n-v-c-sm:block-blinkwait300-blinkon200-blinkoff150,i-ci-ve:ver25-blinkwait300-blinkon200-blinkoff150,r-cr-o:hor20"
 opt.shiftround = true
 opt.smartcase = true
 opt.grepprg = "rg --vimgrep"
@@ -51,4 +53,3 @@ autocmd("TermOpen", { pattern = "*", command = "startinsert" })
 -- Custom Commands
 usercmd('Deploy', '!suitecloud project:deploy', {})
 usercmd('Preview', '!suitecloud project:deploy --dryrun', {})
-
