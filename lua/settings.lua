@@ -43,6 +43,7 @@ opt.wildignorecase = true
 
 -- Global variables
 g.mapleader = " "
+g.maplocalleader = [[\]]
 
 -- Autocommands
 autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.number = false" })

@@ -9,6 +9,10 @@ set_key("n", "<Leader>t", [[<CMD>10sp<CR><CMD>term<CR>]], key_opts)
 set_key("n", "<Leader>j", [[<CMD>cnext<CR>]], key_opts)
 set_key("n", "<Leader>k", [[<CMD>cprev<CR>]], key_opts)
 
+-- LocList specific
+set_key("n", "<LocalLeader>j", [[<CMD>lnext<CR>]], key_opts)
+set_key("n", "<LocalLeader>k", [[<CMD>lprev<CR>]], key_opts)
+
 -- NvimTree specific
 set_key("n", "<C-n>", [[<CMD>NvimTreeToggle<CR>]], key_opts)
 
