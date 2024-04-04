@@ -54,3 +54,12 @@ autocmd("TermOpen", { pattern = "*", command = "startinsert" })
 -- Custom Commands
 usercmd('Deploy', '!suitecloud project:deploy', {})
 usercmd('Preview', '!suitecloud project:deploy --dryrun', {})
+
+-- Neovide
+if vim.g.neovide then
+  vim.g.neovide_window_blurred = true
+  vim.g.neovide_floating_blurred_amount_x = 2.0
+  vim.g.neovide_floating_blurred_amount_y = 2.0
+  vim.g.neovide_scroll_animation_length = 0.1
+  vim.g.neovide_confirm_quit = true
+end
