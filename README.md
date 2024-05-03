@@ -36,6 +36,7 @@ git clone https://github.com/Phandal/PhaNvim /path/to/your/config/location/nvim
 | nvim-treesitter             | Syntax Highlighting           |
 | playground                  | Tree Sitter Play Ground       |
 | nvim-autopairs              | Closing Bracket Support       |
+| Comment.nvim                | Comments Support              |
 | indent-blankline.nvim       | Highlight Indents             |
 | lspkind.nvim                | Adds icons in completion menu |
 | nvim-lspconfig              | Server Configurations for LSP |
