@@ -1,6 +1,21 @@
 local set_key = vim.api.nvim_set_keymap
 local key_opts = { noremap = true, silent = true }
 
+function SwapBackgroundColor()
+  local currentBackground = vim.opt.background:get()
+  local newBackground
+  if (currentBackground == 'dark') then
+    newBackground = 'light'
+  else
+    newBackground = 'dark'
+  end
+  vim.opt.background = newBackground
+  print('Set background: ' .. newBackground)
+end
+
+-- General
+set_key("n", "<F5>", [[<CMD>lua SwapBackgroundColor()<CR>]], key_opts)
+
 -- Terminal Mode specific
 set_key("t", "<ESC>", [[<C-\><C-n>]], key_opts)
 set_key("n", "<Leader>t", [[<CMD>10sp<CR><CMD>term<CR>]], key_opts)
