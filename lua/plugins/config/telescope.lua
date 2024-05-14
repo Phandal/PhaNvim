@@ -1,12 +1,12 @@
-require('telescope').setup{
+require('telescope').setup {
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
-    winblend = 10,
+    winblend = 0,
     prompt_prefix = "󰍉 ",
     selection_caret = "󰜴 ",
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-    layout_strategy = 'bottom_pane',
+    layout_strategy = 'horizontal',
     vimgrep_arguments = {
       "rg",
       "--color=never",
