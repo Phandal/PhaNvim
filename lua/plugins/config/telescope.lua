@@ -6,6 +6,7 @@ require('telescope').setup {
     prompt_prefix = "󰍉 ",
     selection_caret = "󰜴 ",
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    -- borderchars = { "", "", "", "", "", "", "", "" },
     layout_strategy = 'horizontal',
     vimgrep_arguments = {
       "rg",

@@ -40,10 +40,19 @@ opt.grepprg = "rg --vimgrep"
 opt.path = opt.path + "**"
 opt.wildmenu = true
 opt.wildignorecase = true
+opt.inccommand = 'split'
 
 -- Global variables
 g.mapleader = " "
 g.maplocalleader = [[\]]
+
+-- Custom Highlights
+-- vim.api.nvim_set_hl(0, "TelescopePromptNormal", { link = "Cursorline" })
+-- vim.api.nvim_set_hl(0, "TelescopePromptBorder", { link = "Cursorline" })
+-- vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { link = "Visual" })
+-- vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { link = "Visual" })
+-- vim.api.nvim_set_hl(0, "TelescopeResultsNormal", { link = "Folded" })
+-- vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { link = "Folded" })
 
 -- Autocommands
 autocmd("TermOpen", { pattern = "*", command = "lua vim.opt.number = false" })
@@ -62,4 +71,5 @@ if vim.g.neovide then
   vim.g.neovide_floating_blurred_amount_y = 2.0
   vim.g.neovide_scroll_animation_length = 0.1
   vim.g.neovide_confirm_quit = true
+  vim.g.neovide_scale_factor = 0.9
 end

@@ -18,7 +18,8 @@ set_key("n", "<F5>", [[<CMD>lua SwapBackgroundColor()<CR>]], key_opts)
 
 -- Terminal Mode specific
 set_key("t", "<ESC>", [[<C-\><C-n>]], key_opts)
-set_key("n", "<Leader>t", [[<CMD>10sp<CR><CMD>term<CR>]], key_opts)
+set_key("n", "<Leader>tt", [[<CMD>10sp<CR><CMD>term<CR>]], key_opts)
+set_key("n", "<Leader>tv", [[<CMD>vs<CR><CMD>term<CR>]], key_opts)
 
 -- Quickfix specific
 set_key("n", "<Leader>j", [[<CMD>cnext<CR>]], key_opts)
@@ -38,6 +39,7 @@ set_key("n", "<Leader>fg", [[<CMD>lua require("telescope.builtin").live_grep()<C
 set_key("n", "<Leader>fb", [[<CMD>lua require("telescope.builtin").buffers()<CR>]], key_opts)
 set_key("n", "<Leader>fh", [[<CMD>lua require("telescope.builtin").help_tags()<CR>]], key_opts)
 set_key("n", "<Leader>ls", [[<CMD>lua require("telescope.builtin").git_status()<CR>]], key_opts)
+set_key("n", "<Leader>lt", [[<CMD>lua require("telescope.builtin").lsp_document_symbols()<CR>]], key_opts)
 set_key("n", "<Leader>li", [[<CMD>lua require("telescope.builtin").lsp_implementations()<CR>]], key_opts)
 set_key("n", "<Leader>ld", [[<CMD>lua require("telescope.builtin").lsp_definitions()<CR>]], key_opts)
 set_key("n", "<Leader>lr", [[<CMD>lua require("telescope.builtin").lsp_references()<CR>]], key_opts)

@@ -38,7 +38,6 @@ require("gruvbox").setup({
   dim_inactive = false,
   transparent_mode = false,
 })
-vim.cmd("colorscheme gruvbox")
 
 -- Github Dark High Contranst ColorScheme
 -- require('github-theme').setup({
@@ -84,4 +83,10 @@ vim.cmd("colorscheme gruvbox")
 --   specs = {},
 --   groups = {},
 -- })
--- vim.cmd("colorscheme github_dark_default")
+
+
+if vim.g.neovide then
+  vim.cmd("colorscheme github_dark_default")
+else
+  vim.cmd("colorscheme default")
+end
