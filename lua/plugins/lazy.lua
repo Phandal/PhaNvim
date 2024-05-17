@@ -21,7 +21,7 @@ require('lazy').setup({
     dependencies = { 'kyazdani42/nvim-web-devicons' } -- Pretty icons in NvimTree
   },
   'hoob3rt/lualine.nvim',                             -- Different modeline
-  'WhoIsSethDaniel/lualine-lsp-progress',             -- LSP Server Progress in lualine
+  'j-hui/fidget.nvim',                                -- LSP Server Progress
   {
     'nvim-telescope/telescope.nvim',                  -- Fuzzy Finder
     dependencies = { 'nvim-lua/plenary.nvim' }        -- Dependency Plugin
@@ -31,9 +31,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',                -- Syntax highlighting using TreeSitter
     run = ':TSUpdate'
   },
-  'nvim-treesitter/playground',                  -- Playground for TreeSitter
   'windwp/nvim-autopairs',                       -- Automatically adds closing bracket
-  'numToStr/Comment.nvim',                       -- Comment Plugin
   'lukas-reineke/indent-blankline.nvim',         -- Shows a symbol for indents
   'onsails/lspkind.nvim',                        -- Shows pictograms in completion menu
   'neovim/nvim-lspconfig',                       -- Base set of LSP configs

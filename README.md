@@ -29,14 +29,12 @@ git clone https://github.com/Phandal/PhaNvim /path/to/your/config/location/nvim
 | nvim-tree.lua               | Tree-Like File Manager        |
 | nvim-web-devicons           | Fancy Icons for Nvim-Tree     |
 | lualine.nvim                | StatusLine                    |
-| lualine-lsp-progress        | LSP Status in StatusLine      |
+| fidget.nvim                 | LSP Progress                  |
 | telescope.nvim              | Fuzzy Finder/Command Palette  |
 | plenary.nvim                | Dependency Plugin             |
 | gitsigns.nvim               | Git integration               |
 | nvim-treesitter             | Syntax Highlighting           |
-| playground                  | Tree Sitter Play Ground       |
 | nvim-autopairs              | Closing Bracket Support       |
-| Comment.nvim                | Comments Support              |
 | indent-blankline.nvim       | Highlight Indents             |
 | lspkind.nvim                | Adds icons in completion menu |
 | nvim-lspconfig              | Server Configurations for LSP |
