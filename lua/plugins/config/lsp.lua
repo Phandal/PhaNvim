@@ -119,7 +119,8 @@ local servers = {
   'eslint',
   'pyright',
   'jsonls',
-  'ocamllsp'
+  'ocamllsp',
+  'jdtls',
 }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
