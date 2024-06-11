@@ -101,7 +101,7 @@ require('lspconfig')['apex_ls'].setup {
     debounce_text_changes = 150,
   },
   filetypes = { 'apex', 'cls' },
-  apex_jar_path = os.getenv('APEX_LSP_PATH') .. '/apex-jorje-lsp.jar',
+  apex_jar_path = os.getenv('APEX_LSP_PATH'),
   apex_enable_semantic_errors = false,       -- Whether to allow Apex Language Server to surface semantic errors
   apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
 }
