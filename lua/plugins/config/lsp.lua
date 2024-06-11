@@ -100,8 +100,8 @@ require('lspconfig')['apex_ls'].setup {
     -- This will be the default in neovim 0.7+
     debounce_text_changes = 150,
   },
-  filetypes = { 'apex' },
-  apex_jar_path = '/Users/baileyfeldewerd/Downloads/apex-jorje-lsp.jar',
+  filetypes = { 'apex', 'cls' },
+  apex_jar_path = os.getenv('APEX_LSP_PATH') .. '/apex-jorje-lsp.jar',
   apex_enable_semantic_errors = false,       -- Whether to allow Apex Language Server to surface semantic errors
   apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
 }
