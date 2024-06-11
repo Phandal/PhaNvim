@@ -121,6 +121,7 @@ local servers = {
   'jsonls',
   'ocamllsp',
   'jdtls',
+  'lwc_ls',
 }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
