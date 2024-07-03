@@ -44,7 +44,7 @@ setlocal suffixesadd+=.js,.jsx,.es,.es6,.cjs,.mjs,.jsm,.vue,.json
 compiler! tsc
 
 " Color Column
-setlocal colorcolumn=100
+setlocal colorcolumn=200
 
 " The following suffixes should have low priority
 "   .snap    jest snapshot

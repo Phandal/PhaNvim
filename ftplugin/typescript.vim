@@ -26,7 +26,7 @@ setlocal suffixesadd+=.ts,.d.ts,.tsx,.js,.jsx,.cjs,.mjs
 compiler! tsc
 
 " Color Column
-setlocal colorcolumn=100
+setlocal colorcolumn=200
 
 " Change the :browse e filter to primarily show TypeScript-related files.
 if (has("gui_win32") || has("gui_gtk")) && !exists("b:browsefilter")
