@@ -12,7 +12,8 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-CompilerSet makeprg=npx\ tsc
+" CompilerSet makeprg=npx\ tsc
+CompilerSet makeprg=npm\ run
 
 " CompilerSet makeprg=tsc
 CompilerSet errorformat=%f\ %#(%l\\,%c):\ %trror\ TS%n:\ %m,
