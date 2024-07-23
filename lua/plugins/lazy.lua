@@ -31,16 +31,22 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',                -- Syntax highlighting using TreeSitter
     run = ':TSUpdate'
   },
-  'windwp/nvim-autopairs',                       -- Automatically adds closing bracket
-  'lukas-reineke/indent-blankline.nvim',         -- Shows a symbol for indents
-  'onsails/lspkind.nvim',                        -- Shows pictograms in completion menu
-  'neovim/nvim-lspconfig',                       -- Base set of LSP configs
-  'folke/neodev.nvim',                           -- Add functionality to lua server
-  'hrsh7th/nvim-cmp',                            -- Completion engine
-  'hrsh7th/cmp-nvim-lsp',                        -- Completion for LSP
-  'hrsh7th/cmp-nvim-lsp-signature-help',         -- Completion Plugin to show signatures
-  'saadparwaiz1/cmp_luasnip',                    -- Completion Plugin to show snippets
-  'L3MON4D3/LuaSnip',                            -- Snippet Plugin
-  'nanotee/luv-vimdocs',                         -- libuv docs in Neovim
-  { dir = '~/Development/suitecloud.nvim/main' } -- Custom Work in progress
+  'windwp/nvim-autopairs',               -- Automatically adds closing bracket
+  'lukas-reineke/indent-blankline.nvim', -- Shows a symbol for indents
+  'onsails/lspkind.nvim',                -- Shows pictograms in completion menu
+  'neovim/nvim-lspconfig',               -- Base set of LSP configs
+  'folke/neodev.nvim',                   -- Add functionality to lua server
+  {
+    'hrsh7th/nvim-cmp',                  -- Completion engine
+    dependencies = { 'L3MON4D3/LuaSnip' }
+  },
+  'hrsh7th/cmp-nvim-lsp',                         -- Completion for LSP
+  'hrsh7th/cmp-nvim-lsp-signature-help',          -- Completion Plugin to show signatures
+  {
+    'L3MON4D3/LuaSnip',                           -- Snippet Plugin
+    lazy = false,
+    dependencies = { 'saadparwaiz1/cmp_luasnip' } -- Completion Plugin to show snippets
+  },
+  'nanotee/luv-vimdocs',                          -- libuv docs in Neovim
+  { dir = '~/Development/suitecloud.nvim/main' }  -- Custom Work in progress
 })

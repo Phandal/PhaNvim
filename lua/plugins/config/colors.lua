@@ -88,5 +88,5 @@ require("gruvbox").setup({
 if vim.g.neovide then
   vim.cmd("colorscheme github_dark_default")
 else
-  vim.cmd("colorscheme gruvbox")
+  vim.cmd("colorscheme default")
 end
