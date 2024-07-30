@@ -16,6 +16,7 @@ require('lazy').setup({
   'projekt0n/github-nvim-theme',                      -- Github Theme
   'shaunsingh/nord.nvim',                             -- Nord Theme
   'ellisonleao/gruvbox.nvim',                         -- Gruvbox Lua Theme
+  'https://github.com/sainnhe/everforest',            -- Everforest Lua Theme
   {
     'kyazdani42/nvim-tree.lua',                       -- Tree like file manager
     dependencies = { 'kyazdani42/nvim-web-devicons' } -- Pretty icons in NvimTree

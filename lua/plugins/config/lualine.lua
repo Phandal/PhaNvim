@@ -1,5 +1,5 @@
 local theme
-theme = 'auto'
+theme = 'everforest'
 
 local get_current_time = function()
   return os.date('%R') .. ' '
@@ -21,7 +21,7 @@ require('lualine').setup {
     lualine_a = { 'mode' },
     lualine_b = { 'branch', 'diff', 'diagnostics' },
     -- lualine_c = {'filename', 'lsp_progress'},
-    lualine_c = { 'filename'},
+    lualine_c = { 'filename' },
     lualine_x = { get_current_time, 'encoding', 'fileformat', 'filetype' },
     lualine_y = { 'progress' },
     lualine_z = { 'location' }
