@@ -27,7 +27,7 @@ opt.completeopt = "menuone,noselect,noinsert,preview"
 opt.background = "dark"
 opt.laststatus = 3
 opt.fillchars = { eob = " ", vert = "│" }
-opt.cursorline = false
+opt.cursorline = true
 opt.list = true
 -- opt.listchars = opt.listchars + 'eol:󱞥, trail:·, tab:  '
 opt.listchars = opt.listchars + 'trail:·, tab:  '
