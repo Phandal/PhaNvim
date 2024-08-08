@@ -15,6 +15,7 @@ end
 
 -- General
 set_key("n", "<F5>", [[<CMD>lua SwapBackgroundColor()<CR>]], key_opts)
+set_key("n", "<ESC>", [[<CMD>nohlsearch<CR>]], key_opts);
 
 -- Terminal Mode specific
 set_key("t", "<ESC>", [[<C-\><C-n>]], key_opts)
