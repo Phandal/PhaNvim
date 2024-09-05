@@ -47,7 +47,7 @@ set_key("n", "<C-n>", [[<CMD>NvimTreeToggle<CR>]], key_opts)
 -- set_key("n", "<Leader>lp", [[<CMD>lua require("telescope.builtin").diagnostics()<CR>]], key_opts)
 
 -- FzfLua specific
-set_key("n", "<Leader>bs", [[<CMD>lua require("fzf-lua").current_buffer_fuzzy_find()<CR>]], key_opts)
+set_key("n", "<Leader>bs", [[<CMD>lua require("fzf-lua").grep_curbuf()<CR>]], key_opts)
 set_key("n", "<Leader>ff", [[<CMD>lua require("fzf-lua").files()<CR>]], key_opts)
 set_key("n", "<Leader>fg", [[<CMD>lua require("fzf-lua").live_grep()<CR>]], key_opts)
 set_key("n", "<Leader>fb", [[<CMD>lua require("fzf-lua").buffers()<CR>]], key_opts)
