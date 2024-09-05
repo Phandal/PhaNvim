@@ -12,24 +12,28 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  'folke/lazy.nvim',                                  -- Plugin Manager
-  'projekt0n/github-nvim-theme',                      -- Github Theme
-  'shaunsingh/nord.nvim',                             -- Nord Theme
-  'ellisonleao/gruvbox.nvim',                         -- Gruvbox Lua Theme
-  'https://github.com/sainnhe/everforest',            -- Everforest Lua Theme
+  'folke/lazy.nvim',                                 -- Plugin Manager
+  'projekt0n/github-nvim-theme',                     -- Github Theme
+  'shaunsingh/nord.nvim',                            -- Nord Theme
+  'ellisonleao/gruvbox.nvim',                        -- Gruvbox Lua Theme
+  'https://github.com/sainnhe/everforest',           -- Everforest Lua Theme
   {
-    'kyazdani42/nvim-tree.lua',                       -- Tree like file manager
-    dependencies = { 'kyazdani42/nvim-web-devicons' } -- Pretty icons in NvimTree
+    'nvim-tree/nvim-tree.lua',                       -- Tree like file manager
+    dependencies = { 'nvim-tree/nvim-web-devicons' } -- Pretty icons in NvimTree
   },
-  'hoob3rt/lualine.nvim',                             -- Different modeline
-  'j-hui/fidget.nvim',                                -- LSP Server Progress
+  'hoob3rt/lualine.nvim',                            -- Different modeline
+  'j-hui/fidget.nvim',                               -- LSP Server Progress
+  -- {
+  --   'nvim-telescope/telescope.nvim',                  -- Fuzzy Finder
+  --   dependencies = { 'nvim-lua/plenary.nvim' }        -- Dependency Plugin
+  -- },
   {
-    'nvim-telescope/telescope.nvim',                  -- Fuzzy Finder
-    dependencies = { 'nvim-lua/plenary.nvim' }        -- Dependency Plugin
+    'ibhagwan/fzf-lua',                              -- Fuzzy Finder
+    dependencies = { 'nvim-tree/nvim-web-devicons' } -- Dependency Plugin
   },
-  'lewis6991/gitsigns.nvim',                          -- Git integration
+  'lewis6991/gitsigns.nvim',                         -- Git integration
   {
-    'nvim-treesitter/nvim-treesitter',                -- Syntax highlighting using TreeSitter
+    'nvim-treesitter/nvim-treesitter',               -- Syntax highlighting using TreeSitter
     run = ':TSUpdate'
   },
   'windwp/nvim-autopairs',               -- Automatically adds closing bracket
