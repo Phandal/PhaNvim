@@ -8,4 +8,6 @@ if exists('b:did_ftplugin')
 endif
 let b:did_ftplugin = 1
 
+setlocal shiftwidth=4
+
 " vim: sw=2 sts=2 et
