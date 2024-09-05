@@ -10,4 +10,6 @@ let b:did_ftplugin = 1
 
 setlocal shiftwidth=4
 
+setlocal commentstring=//\ %s
+
 " vim: sw=2 sts=2 et
