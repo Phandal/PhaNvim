@@ -125,7 +125,7 @@ require 'fzf-lua'.setup {
       ["ctrl-v"] = actions.file_vsplit,
       ["ctrl-t"] = actions.file_tabedit,
       ["ctrl-q"] = actions.file_sel_to_qf,
-      ["ctrl-Q"] = actions.file_sel_to_ll,
+      --["ctrl-Q"] = actions.file_sel_to_ll,
     },
   },
   fzf_opts      = {
