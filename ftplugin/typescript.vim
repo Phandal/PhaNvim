@@ -18,7 +18,7 @@ setlocal formatoptions-=t formatoptions+=croql
 " Set 'comments' to format dashed lists in comments.
 setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
 
-setlocal commentstring=//%s
+setlocal commentstring=//\ %s
 
 setlocal suffixesadd+=.ts,.d.ts,.tsx,.js,.jsx,.cjs,.mjs
 

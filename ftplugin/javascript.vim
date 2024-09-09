@@ -24,7 +24,7 @@ endif
 " Set 'comments' to format dashed lists in comments.
 setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
 
-setlocal commentstring=//%s
+setlocal commentstring=//\ %s
 
 " Change the :browse e filter to primarily show JavaScript-related files.
 if (has("gui_win32") || has("gui_gtk")) && !exists("b:browsefilter")
