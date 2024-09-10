@@ -23,17 +23,17 @@ require('lazy').setup({
   },
   'hoob3rt/lualine.nvim',                            -- Different modeline
   'j-hui/fidget.nvim',                               -- LSP Server Progress
-  -- {
-  --   'nvim-telescope/telescope.nvim',                  -- Fuzzy Finder
-  --   dependencies = { 'nvim-lua/plenary.nvim' }        -- Dependency Plugin
-  -- },
   {
-    'ibhagwan/fzf-lua',                              -- Fuzzy Finder
-    dependencies = { 'nvim-tree/nvim-web-devicons' } -- Dependency Plugin
+    'nvim-telescope/telescope.nvim',                 -- Fuzzy Finder
+    dependencies = { 'nvim-lua/plenary.nvim' }       -- Dependency Plugin
   },
-  'lewis6991/gitsigns.nvim',                         -- Git integration
+  -- {
+  --   'ibhagwan/fzf-lua',                              -- Fuzzy Finder
+  --   dependencies = { 'nvim-tree/nvim-web-devicons' } -- Dependency Plugin
+  -- },
+  'lewis6991/gitsigns.nvim',           -- Git integration
   {
-    'nvim-treesitter/nvim-treesitter',               -- Syntax highlighting using TreeSitter
+    'nvim-treesitter/nvim-treesitter', -- Syntax highlighting using TreeSitter
     run = ':TSUpdate'
   },
   'windwp/nvim-autopairs',               -- Automatically adds closing bracket
