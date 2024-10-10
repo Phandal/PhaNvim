@@ -45,11 +45,12 @@ require('lazy').setup({
     'hrsh7th/nvim-cmp',                  -- Completion engine
     dependencies = { 'L3MON4D3/LuaSnip' }
   },
-  'hrsh7th/cmp-nvim-lsp',                         -- Completion for LSP
-  'hrsh7th/cmp-nvim-lsp-signature-help',          -- Completion Plugin to show signatures
+  'hrsh7th/cmp-nvim-lsp',                -- Completion for LSP
+  'hrsh7th/cmp-nvim-lsp-signature-help', -- Completion Plugin to show signatures
   {
-    'L3MON4D3/LuaSnip',                           -- Snippet Plugin
+    'L3MON4D3/LuaSnip',                  -- Snippet Plugin
     lazy = false,
+    run = 'make install_jsregexp',
     dependencies = { 'saadparwaiz1/cmp_luasnip' } -- Completion Plugin to show snippets
   },
   'nanotee/luv-vimdocs',                          -- libuv docs in Neovim

@@ -113,7 +113,7 @@ local servers = {
   'gopls',
   'lua_ls',
   'clangd',
-  'tsserver',
+  'ts_ls',
   'cssls',
   'html',
   'eslint',
