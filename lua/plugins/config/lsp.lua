@@ -1,3 +1,5 @@
+local lspconfig = require('lspconfig');
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
@@ -93,7 +95,7 @@ require("neodev").setup({
 })
 
 -- Apex Language Server
-require('lspconfig')['apex_ls'].setup {
+lspconfig['apex_ls'].setup {
   on_attach = on_attach,
   capabilities = capabilities,
   flags = {
@@ -106,6 +108,27 @@ require('lspconfig')['apex_ls'].setup {
   apex_enable_completion_statistics = false, -- Whether to allow Apex Language Server to collect telemetry on code completion usage
 }
 
+lspconfig['denols'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = {
+    -- This will be the default in neovim 0.7+
+    debounce_text_changes = 150,
+  },
+  root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc")
+}
+
+lspconfig['ts_ls'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = {
+    -- This will be the default in neovim 0.7+
+    debounce_text_changes = 150,
+  },
+  root_dir = lspconfig.util.root_pattern("package.json"),
+  single_file_support = false,
+}
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = {
@@ -113,7 +136,6 @@ local servers = {
   'gopls',
   'lua_ls',
   'clangd',
-  'ts_ls',
   'cssls',
   'html',
   'eslint',
